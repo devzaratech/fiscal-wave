@@ -7,11 +7,11 @@
 |---|---|---|
 | M0 - Fundamentos | Documentación bilingüe, diagramas, alcance, agentes y backlog Scrum | Revisión y merge de documentos sin afirmar funciones inexistentes |
 | M1 - Sistema distribuido, estándares y CI | Dos servicios Java, shell/MFE, Docker, Postgres, FW-022 y FW-023 | Gate PR siempre ejecutado, builds y pruebas selectivas Java/React sin AWS, demostración |
-| M2 - Dominio fiscal offline | DTE sintéticos 33/34, firma, folios y comandos idempotentes | Pruebas de concurrencia, replay, conflictos y deduplicación; XML/XSD con fuentes SII |
+| M2 - DTE XML/PDF offline | DTE sintéticos 33/34, PFX/CAF protegido, TED, XMLDSig y PDF417 | FW-025–027, XSD oficiales, pruebas de firma/timbre, impresión y concurrencia |
 | M3 - Laboratorio AWS y entrega | IAM/S3/Lambda/SQS, ECS/ALB temporal y ensayo de FW-023 | Despliegue OIDC aprobado, smoke, failover, rollback, `terraform destroy` y costos |
-| M4 - Integración oficial Chile | Pruebas SII y proceso formal con emisor habilitado | Evidencia oficial; no afirmar certificación prematuramente |
+| M4 - Integración oficial Chile | Certificación SII con emisor habilitado, muestras PDF417 e intercambio | Evidencia oficial de XML, emisión, estados, impresión e intercambio |
 | M5 - Piloto y auditoría verificable | Seguridad, aislamiento multiempresa, respaldo, cadena SHA-256 y detección de alteraciones | Pruebas con datos sintéticos, piloto autorizado y procedimiento operativo |
-| M6 - Expansión | Otro país, facturación recurrente o pagos solo tras descubrir demanda | ADR, investigación y validación por jurisdicción |
+| M6 - Expansión | Evaluar MongoDB/JSONB, funciones de otros DTE y países solo tras validar demanda | FW-024/028, ADR, fuentes SII y evidencia comercial |
 | M7 - Anclaje criptográfico opcional | Evaluar checkpoints firmados, WORM, raíces Merkle y adaptador blockchain | PoC sintética con revisión de privacidad y costos; independiente de la emisión DTE |
 
 ## Primera meta operativa

@@ -8,6 +8,9 @@ First users: Chilean developers integrating ERPs and small businesses needing pr
 ## First vertical slice (MVP)
 Synthetic issuer & recipient fixtures; DTE 33/34 model and calculations; CAF/folio simulation before real authorization; XML validation/signing against verified official specifications; SII sandbox connector when credentials and authorization exist; state machine; minimal invoice and operations MFEs; reliable persisted events; local installation.
 
+## Complete fiscal document scope / Alcance tributario
+The MVP path must eventually protect a real authorized signer PFX/P12 and a **distinct** CAF timbre key, validate official SII XSD, issue signed immutable XML, render PDF417 PDFs, retain XML, and pass official test/print/exchange requirements when eligible. Redis cache and MongoDB read projections remain optional and cannot block issuance. [SII DTE lifecycle](../planning/SII-DTE-LIFECYCLE.md) · [provider matrix](../planning/PROVIDER-CAPABILITIES.md). These are planned, not delivered.
+
 ## Out of scope for initial slice
 Payment custody, acquiring, billing subscriptions, cross-border tax support, fully active-active multi-cloud, claims of SII certification, production invoicing, real taxpayer data and always-on AWS.
 

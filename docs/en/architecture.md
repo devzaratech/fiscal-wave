@@ -14,6 +14,9 @@
 ## Decision record
 ADR-001: multi-service monorepo now, independent builds and deploys later. ADR-002: AWS-first learning but cloud-portable domain. ADR-003: one transactional fiscal-document owner. ADR-004: single frontend shell, domain MFEs. ADRs proposed; validate in first milestone.
 
+## SII cryptographic workflow and storage / Flujo criptográfico y datos
+FW-024 proposes optional Redis cache and MongoDB projections only after comparison with PostgreSQL JSONB; Postgres remains authority for folios and durable idempotency. FW-025 protects signer PKCS#12 separately from SII CAF/RSASK. FW-026 covers versioned official XSD, TED and XMLDSig; FW-027 renders PDF/PDF417 from immutable XML; FW-028 defines public-provider feature benchmark. See [data](../planning/DATA-PLATFORMS.md), [SII lifecycle](../planning/SII-DTE-LIFECYCLE.md), [vendor matrix](../planning/PROVIDER-CAPABILITIES.md), [ADR-0008](../adr/0008-polyglot-persistence.md), [ADR-0009](../adr/0009-credential-custody-and-signing.md), [PlantUML](../architecture/sii-signing-and-pdf.puml). **None are implemented yet.**
+
 ## Engineering quality / Calidad de ingeniería
 FW-022 establishes [SOLID and coding standards](engineering-standards.md), [pattern selection](../architecture/pattern-catalog.md), [idempotency semantics](../architecture/idempotency-contract.md) and [ADR-0006](../adr/0006-engineering-standards.md). These are proposed controls, not proof of implementation. Apply a pattern only with a concrete problem and tested tradeoff. Format, lint, architecture and test gates join CI progressively with code.
 

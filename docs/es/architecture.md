@@ -14,6 +14,9 @@
 ## Registros de decisión propuestos
 ADR-001 monorepo con microservicios; ADR-002 AWS-first pero dominio portable; ADR-003 dueño fiscal transaccional único; ADR-004 shell y MFEs por dominio. Confirmar en el primer hito.
 
+## Criptografía SII, XML/PDF y persistencia políglota
+FW-024 incluye Redis como caché opcional y MongoDB para proyecciones solo cuando supere alternativas como PostgreSQL JSONB. PostgreSQL mantiene folios e idempotencia. FW-025 separa el PFX del firmante de la llave privada CAF/RSASK para timbrar; FW-026 exige XSD oficiales, TED y XMLDSig; FW-027 renderiza PDF417 desde XML inmutable; FW-028 compara funciones públicas de LibreDTE y otros proveedores. Ver [datos](../planning/DATA-PLATFORMS.md), [ciclo SII](../planning/SII-DTE-LIFECYCLE.md), [proveedores](../planning/PROVIDER-CAPABILITIES.md), [ADR-0008](../adr/0008-polyglot-persistence.md), [ADR-0009](../adr/0009-credential-custody-and-signing.md), [PlantUML](../architecture/sii-signing-and-pdf.puml). **Ninguna de estas funciones está implementada.**
+
 ## Calidad de ingeniería / Engineering quality
 FW-022 incorpora [SOLID y estándares de programación](engineering-standards.md), [selección de patrones](../architecture/pattern-catalog.md), [semántica de idempotencia](../architecture/idempotency-contract.md) y [ADR-0006](../adr/0006-engineering-standards.md). Son requisitos propuestos, no implementación probada. Cada patrón exige justificación concreta y pruebas; herramientas de CI se integran progresivamente.
 
