@@ -34,6 +34,13 @@ Exercises with original prompts and a synthetic SQL fixture: [practice kit](../.
 | EX-09 | Balance two APIs with Nginx; kill one / Balancear dos APIs y detener una | HTTP networking, health checks | Demonstrated failover + no lost state |
 | EX-10 | Secure Lambda writing only one S3 prefix / Asegurar Lambda a prefijo S3 | IAM, S3, policy design | Deny cross-bucket writes, no static keys |
 
+## Design and quality practice / Práctica de diseño y calidad (FW-022)
+- Explain SOLID with an actual FiscalWave class that violates and then satisfies SRP/DIP; justify why fewer abstractions may be safer / Ejemplo de refactor SOLID sin sobreingeniería.
+- Refactor one API to Strategy or Adapter **only** when real variation exists; explain Big-O, alternative and tests / Justificar patrón, complejidad y pruebas.
+- Exercise idempotency: duplicate request, changed payload with same key, concurrent calls, restart and unknown SII result / Repetición, conflicto, concurrencia y reconciliación.
+- Practice identifying fragile controller/domain coupling and test behavior with JUnit and integration fixtures / Detectar acoplamiento y probar.
+See [EN engineering standards](../en/engineering-standards.md) · [ES estándares](../es/engineering-standards.md).
+
 ## Mock evaluation rubric / Rúbrica
 Score each dimension 0–2: (1) correct output, (2) tests/edge cases, (3) time/space complexity, (4) clarity and communication, (5) code readability. Maximum 10; improvement matters more than one score. / Puntuar corrección, pruebas, complejidad, claridad y legibilidad.
 

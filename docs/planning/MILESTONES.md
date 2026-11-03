@@ -5,8 +5,8 @@ All milestones are **proposed, not complete** / Todos los hitos están **propues
 | ID | Outcome (EN) / Resultado (ES) | Acceptance evidence / Evidencia de aceptación | Status |
 |---|---|---|---|
 | M0 | Reviewed bilingual foundation / Base documental bilingüe revisada | Docs + diagrams + agent rules + backlog merged after review / docs fusionados tras revisión | IN_PROGRESS |
-| M1 | Local runnable distributed slice / Flujo distribuido local | Two APIs + shell/invoice MFE + PostgreSQL + Compose + CI + synthetic flow | TODO |
-| M2 | Correct offline DTE flow / Flujo DTE offline correcto | DTE 33/34 rules + signed artifacts model + concurrency/idempotency tests + official schema references | TODO |
+| M1 | Local runnable distributed slice + engineering baseline / Flujo local y estándares | Two APIs + shell/invoice MFE + PostgreSQL + Compose + CI + synthetic flow; FW-022 SOLID/pattern guidelines and selected real format/lint/tests configured / Código, CI y estándares con evidencia | TODO |
+| M2 | Correct offline DTE flow / Flujo DTE offline correcto | DTE 33/34, signed artifacts, official schema sources, FW-022 HTTP/event idempotency with replay/conflict/timeout and concurrency/folio tests / Pruebas de idempotencia y concurrencia | TODO |
 | M3 | Cost-limited AWS lab / Laboratorio AWS con control de costos | IAM/S3/Lambda/SQS; temporary ECS + ALB failover; terraform destroy evidence; actual cost checked | TODO |
 | M4 | Chilean official test path / Ruta oficial Chile | Authorized test issuer, SII test/certification evidence and documented outcome; no invented approvals | TODO |
 | M5 | Pilot operational readiness + verifiable audit / Piloto y auditoría verificable | Tenant isolation, FW-021 local SHA-256 hash chain and tamper tests, restore drills, monitoring, support, customer approval / Cadena de hashes, pruebas de alteración y operación | TODO |

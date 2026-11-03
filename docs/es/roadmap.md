@@ -6,8 +6,8 @@
 | Hito | Objetivo | Evidencia |
 |---|---|---|
 | M0 - Fundamentos | Documentación bilingüe, diagramas, alcance, agentes y backlog Scrum | Revisión y merge de documentos sin afirmar funciones inexistentes |
-| M1 - Sistema distribuido ejecutable | Dos servicios Java, shell/MFE de facturas, Docker y Postgres local | CI, pruebas smoke, /health, contratos y demostración |
-| M2 - Dominio fiscal offline | DTE sintéticos 33/34, reglas deterministas, firma y folios simulados | Pruebas de concurrencia e idempotencia; validación XML/XSD con fuentes SII |
+| M1 - Sistema distribuido y estándares | Dos servicios Java, shell/MFE, Docker, Postgres y FW-022 | CI, pruebas smoke y contratos, format/lint/arquitectura con evidencia y demostración |
+| M2 - Dominio fiscal offline | DTE sintéticos 33/34, firma, folios y comandos idempotentes | Pruebas de concurrencia, replay, conflictos y deduplicación; XML/XSD con fuentes SII |
 | M3 - Laboratorio AWS | IAM/S3/Lambda/SQS y demo ECS/ALB temporales con costo aprobado | IaC, presupuesto, logs, failover, `terraform destroy` y revisión de costo |
 | M4 - Integración oficial Chile | Pruebas SII y proceso formal con emisor habilitado | Evidencia oficial; no afirmar certificación prematuramente |
 | M5 - Piloto y auditoría verificable | Seguridad, aislamiento multiempresa, respaldo, cadena SHA-256 y detección de alteraciones | Pruebas con datos sintéticos, piloto autorizado y procedimiento operativo |

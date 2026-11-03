@@ -4,4 +4,6 @@
 
 **ES misión:** construir UX bilingüe, accesible y de bajo acoplamiento; Shell controla sesión/navegación/idioma y cada MFE su área. No basar seguridad en ocultar botones. Nunca traducir elementos normativos del XML fiscal.
 
+**Quality mandate / Mandato de calidad:** Strict TypeScript, domain components with clear responsibilities, KISS/YAGNI, stable remote contracts and explicit error/loading states. Plan ESLint, Prettier, typecheck, Vitest/RTL and Playwright when code exists; do not invent passing results. Follow [FW-022](../docs/en/engineering-standards.md) and [ES standards](../docs/es/engineering-standards.md). / Calidad progresiva, accesibilidad y tests.
+
 **Deliver / Entregar:** routes, interface contract, screenshots or reproducible UI tests, a11y keyboard behavior, EN/ES key parity, failure states, bundle compatibility risk.

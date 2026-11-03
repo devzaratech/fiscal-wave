@@ -8,6 +8,16 @@ Every box is **unchecked by default** and must be backed by evidence before it c
 - [ ] Validate architecture PlantUML with an actual renderer (marker checks alone are insufficient) / Validar los diagramas con PlantUML real.
 - [ ] Set GitHub branch protections, review flow and issues/milestones as desired / Configurar protección de rama y tablero.
 
+## Engineering standards / Estándares de ingeniería (FW-022, M1/M2)
+- [ ] Review EN/ES SOLID, DRY/KISS/YAGNI, clean naming, pattern catalog, and ADR-0006 / Revisar guías y decisión.
+- [ ] M1: configure compatible formatter, lint, unit tests, typecheck and CI for the **code that exists**, with real outputs / Configurar controles progresivos.
+- [ ] M1: create ArchUnit rule for forbidden cross-boundary dependencies when Java modules exist / Reglas arquitectónicas.
+- [ ] M2: implement HTTP idempotency key/fingerprint/conflict semantics and durable uniqueness / Idempotencia HTTP.
+- [ ] M2: implement consumer inbox dedupe, event replay and unknown SII response reconciliation tests / Deduplicación de eventos y conciliación.
+- [ ] Add unit/DB integration/contract/security negative tests and track results, not fabricated coverage / Pruebas con evidencia.
+
+[FW-022](https://github.com/devzaratech/fiscal-wave/issues/7) · [EN](../en/engineering-standards.md) · [ES](../es/engineering-standards.md)
+
 ## First vertical increment / Primer incremento (M1)
 - [ ] Scaffold Maven Java service `fiscal-document` plus `tenant` API with health endpoints / Crear dos APIs Java.
 - [ ] Define OpenAPI contract, fake issuer/recipient and negative authorization test / Contrato y pruebas.

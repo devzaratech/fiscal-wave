@@ -11,6 +11,9 @@
 | Milestones / Hitos | [MILESTONES.md](MILESTONES.md) |
 | Scrum and Agile / Scrum y Agile | [SCRUM.md](SCRUM.md) |
 | Quality + DoD / Calidad + Definición de terminado | [QUALITY.md](QUALITY.md) |
+| Engineering standards / Estándares de ingeniería | [EN](../en/engineering-standards.md) / [ES](../es/engineering-standards.md) |
+| Patterns / Patrones | [Pattern catalog / Catálogo](../architecture/pattern-catalog.md) |
+| Idempotency / Idempotencia | [Idempotency contract / Contrato](../architecture/idempotency-contract.md) |
 | Interview preparation / Entrevistas | [INTERVIEWS.md](INTERVIEWS.md) |
 | Cloud cost safety / FinOps | [FINOPS.md](FINOPS.md) |
 | Regulatory evidence / Cumplimiento | [COMPLIANCE.md](COMPLIANCE.md) |

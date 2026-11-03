@@ -1,0 +1,31 @@
+@startuml
+title FiscalWave — Idempotent issuance / Emisión idempotente (proposed)
+skinparam shadowing false
+actor Client
+participant "Fiscal API" as API
+database "Fiscal DB\n(Idempotency + DTE + Outbox)" as DB
+queue "Event broker" as Q
+participant "SII Connector" as SII
+Client -> API : POST /issue + Idempotency-Key
+API -> DB : Authenticate tenant; reserve scoped key + fingerprint
+alt new / nueva
+  DB --> API : reserved
+  API -> DB : Transaction: allocate unique folio,\nsign document, save outbox + result
+  DB --> API : committed document ID
+  API --> Client : 202 Accepted + Location
+else same key and same fingerprint / repetida
+  DB --> API : stored result/pending
+  API --> Client : same result or 202 + status URI
+else same key, different fingerprint / contenido distinto
+  DB --> API : conflict
+  API --> Client : 409 Conflict
+end
+DB -> Q : outbox publisher (at least once)
+Q -> SII : event ID, document ref
+SII -> SII : inbox deduplication
+note right of SII
+External timeout != rejection.
+Reconcile unknown status
+before resubmission.
+end note
+@enduml

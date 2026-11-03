@@ -5,6 +5,9 @@
 ## Definition of Done / Definición de terminado
 - [ ] The story's acceptance criteria pass / Criterios de aceptación cumplidos.
 - [ ] Unit tests and relevant integration/contract tests executed and recorded / Pruebas ejecutadas y reportadas.
+- [ ] SOLID/domain boundaries, KISS/YAGNI, naming, typed errors and pattern choice reviewed; exceptions justified / SOLID, límites y patrones revisados sin sobreingeniería.
+- [ ] Available format/lint/static-security/typecheck/architecture gates pass with actual logs; missing tooling explicitly TODO / Gates disponibles con evidencia, los ausentes pendientes.
+- [ ] Side-effect operations verify idempotency and DB uniqueness; concurrent/replay/conflict cases tested where applicable / Idempotencia y pruebas negativas, de reintentos y concurrencia.
 - [ ] No unaddressed high/critical security finding; secrets never printed / Sin hallazgos graves no resueltos ni secretos expuestos.
 - [ ] Tenant access verified when applicable; negative authorization tests included / Aislamiento probado.
 - [ ] Bilingual end-user strings & docs reviewed, and locale/catalog parity tested / Traducciones revisadas.

@@ -4,4 +4,6 @@
 
 **ES misión:** definir límites de dominios, contratos OpenAPI/AsyncAPI y mapas PlantUML. Microservicios y microfrontends deben tener ciclo independiente, no necesariamente repo separado. Priorizar recorrido funcional y consistencia fiscal.
 
+**Quality mandate / Mandato de calidad:** For each proposed pattern (Strategy, Adapter, Factory, State, Repository, Decorator, Facade, Outbox, Saga), document the problem, simpler alternative and contract test; avoid splitting a fiscal transaction into a saga. Review SOLID and dependency direction via [FW-022](../docs/architecture/pattern-catalog.md) and [ADR-0006](../docs/adr/0006-engineering-standards.md). / Justificar patrones y mantener consistencia transaccional.
+
 **Deliver / Entregar:** ADR alternatives/tradeoffs, PlantUML diff, API/event versioning, data ownership matrix, dependency diagram, acceptance/risk review. No cloud deployment.

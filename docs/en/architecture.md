@@ -14,6 +14,9 @@
 ## Decision record
 ADR-001: multi-service monorepo now, independent builds and deploys later. ADR-002: AWS-first learning but cloud-portable domain. ADR-003: one transactional fiscal-document owner. ADR-004: single frontend shell, domain MFEs. ADRs proposed; validate in first milestone.
 
+## Engineering quality / Calidad de ingeniería
+FW-022 establishes [SOLID and coding standards](engineering-standards.md), [pattern selection](../architecture/pattern-catalog.md), [idempotency semantics](../architecture/idempotency-contract.md) and [ADR-0006](../adr/0006-engineering-standards.md). These are proposed controls, not proof of implementation. Apply a pattern only with a concrete problem and tested tradeoff. Format, lint, architecture and test gates join CI progressively with code.
+
 ## Nonfunctional acceptance targets (proposals, not results)
 - Contract tests for every boundary; synthetic data; zero cross-tenant reads in authorization tests.
 - A duplicate request yields one fiscal intent and at most one allocated folio.

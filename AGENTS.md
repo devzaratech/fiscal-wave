@@ -14,6 +14,9 @@ Applies to Codex, Copilot and any code assistants. **Instructions are guidance; 
 9. Do not introduce microservices/microfrontends without defining boundary, owner, API/events, security, lifecycle and test strategy.
 10. Run available checks and report **executed**, **not executed**, **failed**, **pending** separately. Never mark TODOs done without evidence.
 
+## Engineering standards / Estándares de ingeniería
+All code agents MUST follow [EN engineering standards](docs/en/engineering-standards.md), [ES estándares](docs/es/engineering-standards.md), [pattern catalog](docs/architecture/pattern-catalog.md), [idempotency contract](docs/architecture/idempotency-contract.md) and [ADR-0006](docs/adr/0006-engineering-standards.md). Apply SOLID, DRY/KISS/YAGNI without pattern cargo cult; document chosen pattern and simpler alternative. Require transaction-level idempotency + event dedupe and SII reconciliation on affected flows. Add tooling progressively as code exists; do not claim absent checks passed. / Aplicar SOLID y patrones justificados, pruebas reales y calidad progresiva.
+
 ## Work routine / Flujo de trabajo
 - Select one backlog ID; define objective, non-goals, accepted dependencies and acceptance criteria (EN/ES).
 - Propose plan + touched files + risk and estimated recurring cloud cost.

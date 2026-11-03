@@ -14,6 +14,9 @@
 ## Registros de decisión propuestos
 ADR-001 monorepo con microservicios; ADR-002 AWS-first pero dominio portable; ADR-003 dueño fiscal transaccional único; ADR-004 shell y MFEs por dominio. Confirmar en el primer hito.
 
+## Calidad de ingeniería / Engineering quality
+FW-022 incorpora [SOLID y estándares de programación](engineering-standards.md), [selección de patrones](../architecture/pattern-catalog.md), [semántica de idempotencia](../architecture/idempotency-contract.md) y [ADR-0006](../adr/0006-engineering-standards.md). Son requisitos propuestos, no implementación probada. Cada patrón exige justificación concreta y pruebas; herramientas de CI se integran progresivamente.
+
 ## Criterios no funcionales (objetivos, no resultados)
 - Contratos probados y datos sintéticos; cero accesos cruzados entre tenants en pruebas de autorización.
 - Repetir una petición no asigna un folio adicional.
