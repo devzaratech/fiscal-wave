@@ -21,6 +21,16 @@ Every box is **unchecked by default** and must be backed by evidence before it c
 - [ ] Implement unique folio and idempotency under concurrent load using synthetic fixtures.
 - [ ] Model timeout, rejection and reconciliation before a real SII integration.
 
+## Verifiable cryptographic audit / Auditoría criptográfica verificable (FW-021, M5/M7)
+- [ ] M5: Define versioned SHA-256 hashes of the exact signed XML bytes and ordered audit events / Definir hashes versionados.
+- [ ] M5: Implement append-only hash chain and tests detecting changed, deleted and reordered synthetic events / Verificar integridad.
+- [ ] M5: Review tenant isolation, restricted audit access, retention and administrator rewrite threat / Revisar privacidad, retención y límites.
+- [ ] M7 optional: Compare signed independent checkpoints, Merkle roots, WORM and blockchain costs and trust / Comparar alternativas.
+- [ ] M7 optional: Design AuditAnchoringProvider with local stub; enable external provider only after approval / Adaptador opcional sin costos no autorizados.
+- [ ] Never publish DTE, RUT, PII, CAF or certificates on-chain; blockchain does not replace SII certification / Sin datos reales ni sustitución del SII.
+
+[FW-021 issue / Historia](https://github.com/devzaratech/fiscal-wave/issues/6)
+
 ## Career skills / Competencias laborales (parallel / paralelo)
 - [ ] Complete original challenge EX-01 and record Big-O + edge cases.
 - [ ] Complete SQL EX-04 with window functions, EX-05 with unique constraint discussion.
