@@ -17,6 +17,9 @@ Applies to Codex, Copilot and any code assistants. **Instructions are guidance; 
 ## Engineering standards / Estándares de ingeniería
 All code agents MUST follow [EN engineering standards](docs/en/engineering-standards.md), [ES estándares](docs/es/engineering-standards.md), [pattern catalog](docs/architecture/pattern-catalog.md), [idempotency contract](docs/architecture/idempotency-contract.md) and [ADR-0006](docs/adr/0006-engineering-standards.md). Apply SOLID, DRY/KISS/YAGNI without pattern cargo cult; document chosen pattern and simpler alternative. Require transaction-level idempotency + event dedupe and SII reconciliation on affected flows. Add tooling progressively as code exists; do not claim absent checks passed. / Aplicar SOLID y patrones justificados, pruebas reales y calidad progresiva.
 
+## SII lifecycle and polyglot security / Ciclo SII y seguridad de datos
+Before coding Redis/Mongo, consult [FW-024](docs/planning/DATA-PLATFORMS.md). PostgreSQL remains authoritative for folios, DTE state and durable idempotency. Before signing or rendering DTE, consult [FW-025–027](docs/planning/SII-DTE-LIFECYCLE.md), [official evidence](docs/planning/COMPLIANCE.md), [ADR-0009](docs/adr/0009-credential-custody-and-signing.md) and [provider matrix](docs/planning/PROVIDER-CAPABILITIES.md). **Never confuse authorized signer PKCS#12 private key with separate CAF timbre key; never store secrets in Git, logs, Redis or Mongo.** Validate official XSD with safe XML parser and render PDFs with PDF417 exclusively from immutable signed XML. No real credentials or SII requests without authorization. / Validación, firma, timbre y datos bajo límites verificables.
+
 ## Work routine / Flujo de trabajo
 - Select one backlog ID; define objective, non-goals, accepted dependencies and acceptance criteria (EN/ES).
 - Propose plan + touched files + risk and estimated recurring cloud cost.

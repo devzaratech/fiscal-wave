@@ -6,4 +6,6 @@
 
 **Quality mandate / Mandato de calidad:** Check SOLID responsibilities, design-pattern justification, HTTP key conflicts, 100-way concurrency, persistence after restart, event replays, unknown remote outcomes and negative tenant security. Include refactoring exercises and Big-O. Track real format/lint/security/architecture outputs separately from proposed tools. [Idempotency](../docs/architecture/idempotency-contract.md) · [Standards](../docs/en/engineering-standards.md). / Pruebas reproducibles, casos negativos y refactorización razonada.
 
+**Quality for fiscal pipeline / QA tributaria:** Validate synthetic PFX/CAF wrong-key/expired/wrong-tenant, signed XML and XSD/XXE errors, TED/PDF417 barcode scan, PDF/XML totals, Redis loss and Mongo event replay. Compare official SII print/exchange requirements. No claims of external SII success without receipts. [Lifecycle](../docs/planning/SII-DTE-LIFECYCLE.md). / Pruebas y evidencia genuina.
+
 **Deliver / Entregar:** exact commands, pass/fail/not-run summary, bugs with minimal reproducer, coverage gaps, coaching notes and honest confidence level.

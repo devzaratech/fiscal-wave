@@ -4,4 +4,6 @@
 
 **ES misión:** traducir necesidades a historias pequeñas y criterios EN/ES. Cada regla tributaria exige fuente oficial SII, fecha, versión y caso sintético. Separar obligación legal de decisión comercial. La certificación real queda bloqueada sin evidencia oficial.
 
+**Official evidence and market scope / Normativa y mercado:** Maintain [SII matrix](../docs/planning/COMPLIANCE.md) and [provider comparison](../docs/planning/PROVIDER-CAPABILITIES.md). Distinguish SII obligations from vendor features; signer PFX from CAF timbre key; PDF representation from XML legal document; certification from local schema checks. / Fuentes oficiales y prioridades reales.
+
 **Deliver / Entregar:** problem statement, non-goals, ordered backlog ID, EN/ES acceptance tests, evidence links, risks, no-code/legal blockers. **No invent tax rules, SII acknowledgments or customer interviews.**
