@@ -16,6 +16,9 @@ Based on the [2020 official Scrum Guide](https://scrumguides.org/scrum-guide.htm
 - **Retrospective (15m):** identify one improvement; reflect it in next sprint. / Una mejora accionable.
 - WIP limit: at most **one main feature** and **one small interview exercise** concurrently, to preserve focus. / Límite de trabajo simultáneo.
 
+## AI work ownership / Propiedad de trabajo IA
+Each sprint task has one write owner (Codex/Claude/OpenCode/human), one branch/worktree and a versioned task contract. Separate agents review read-only. The maintainer reviews concurrent PRs for file/contract overlap and merges sequentially; no automatic conflict resolution for tax/privacy-critical changes. / Dueño único por tarea, traspaso y revisiones humanas. See [FW-029](MULTI_AGENT.md).
+
 ## Definition of Ready (team policy, not Scrum requirement) / Criterios de entrada
 Objective, owner, acceptance tests, legal dependencies, EN/ES UI impact, threat/cost risk and rollback scope understood.
 

@@ -4,12 +4,12 @@ All milestones are **proposed, not complete** / Todos los hitos están **propues
 
 | ID | Outcome (EN) / Resultado (ES) | Acceptance evidence / Evidencia de aceptación | Status |
 |---|---|---|---|
-| M0 | Reviewed bilingual foundation / Base documental bilingüe revisada | Docs + diagrams + agent rules + backlog merged after review / docs fusionados tras revisión | IN_PROGRESS |
+| M0 | Reviewed bilingual foundation + agent governance / Base revisada y coordinación IA | Docs, FW-029 task/worktree/PR procedures, FW-031 jurisdiction ADR, privacy risk inventory and real diagram compilation; owner review and merge pending / Base sin fusionar | IN_PROGRESS |
 | M1 | Local runnable distributed slice + quality CI / Flujo local y CI | Two APIs + shell/invoice MFE + Compose, FW-022 engineering rules and FW-023 Java/React PR build/test gate (no cloud), reproducible evidence / CI sin recursos AWS | TODO |
 | M2 | Validated signed XML and PDF / XML firmado y PDF verificables | DTE 33/34, synthetic PFX/CAF secret controls, official XSD, TED/XMLDSig, PDF417 print scan tests (FW-025–027), idempotency/folio/concurrency evidence / Validación offline sin certificación | TODO |
 | M3 | Cost-limited AWS CI/CD lab / Laboratorio AWS y despliegue controlado | IAM/S3/Lambda/SQS, temporary ECS/ALB, FW-023 manual approved deploy and rollback, Terraform destroy evidence and actual cost review / Aprobar costos y verificar destrucción | TODO |
 | M4 | Official SII test path / Pruebas oficiales SII | Authorized issuer and signer, validated DTE, PDF417 print samples, exchange, test/certification receipts; no invented approvals / Habilitación real del SII requerida | TODO |
-| M5 | Pilot operational readiness + verifiable audit / Piloto y auditoría verificable | Tenant isolation, FW-021 cryptographic audit, FW-023 protected release/rollback, restore drills, monitoring and authorized pilot / Entrega segura con aprobaciones | TODO |
+| M5 | Privacy-reviewed authorized pilot / Piloto con revisión jurídica | Tenant isolation, cryptographic audit, protected release and FW-030 lawful processing, DSAR/retention, breach/transfer, EIPD screening, backup/restore and legal sign-off; authorized SII only / No asumir conformidad automática | TODO |
 | M6 | Expansion and data decision / Expansión y persistencia | FW-024 optional Mongo vs JSONB; FW-028 research for boletas, guides, notes, books, factoring and payments, only with SII and market evidence / Expansión validada | TODO |
 | M7 (optional / opcional) | Independent audit proof / Prueba independiente de auditoría | FW-021: compare signed checkpoints, WORM and Merkle anchoring; optional blockchain adapter design and synthetic PoC with approved privacy/cost review; no real DTE on-chain / Blockchain no obligatorio | TODO |
 

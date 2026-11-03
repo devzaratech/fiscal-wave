@@ -17,6 +17,9 @@
 | Idempotency / Idempotencia | [Idempotency contract / Contrato](../architecture/idempotency-contract.md) |
 | Interview preparation / Entrevistas | [INTERVIEWS.md](INTERVIEWS.md) |
 | Cloud cost safety / FinOps | [FINOPS.md](FINOPS.md) |
+| Agent coordination / Coordinación IA | [MULTI_AGENT.md](MULTI_AGENT.md) |
+| Chile Law 21.719 privacy / Datos personales | [Privacy program / Privacidad](../privacy/README.md) |
+| Country-repository decision / Decisión por país | [ADR-0010](../adr/0010-country-repository-strategy.md) |
 | Regulatory evidence / Cumplimiento | [COMPLIANCE.md](COMPLIANCE.md) |
 | Redis, MongoDB / Persistencia | [DATA-PLATFORMS.md](DATA-PLATFORMS.md) |
 | PFX, CAF, XSD, PDF417 / Flujo fiscal | [SII-DTE-LIFECYCLE.md](SII-DTE-LIFECYCLE.md) |

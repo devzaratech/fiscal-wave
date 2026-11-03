@@ -19,6 +19,8 @@
 - [ ] Optional Redis/Mongo adapters cannot alter authoritative PostgreSQL folio/idempotency and tenant isolation / Bases opcionales sin comprometer emisión.
 - [ ] Required CI gate always runs on PR; Maven/TS checks, security and contract jobs executed or explicitly marked not applicable / Gate CI siempre ejecutado, resultados o N/A.
 - [ ] Release artifacts immutable (commit/digest), deployment approval/rollback and schema compatibility checked when applicable / Artefactos, aprobación y rollback.
+- [ ] For AI-authored application changes, valid FW task contract and allowed changed paths, with cross-PR overlap reviewed by owner / Contrato y revisión de solapamientos.
+- [ ] Personal data flows satisfy approved purpose/lawful basis, tenant security, deletion vs legal retention, incident readiness, EIPD screen and international transfer review as applicable / Privacidad y normativa chilena verificadas.
 - [ ] PR reviewed and no unresolved blockers; implemented status distinguished from future work / PR revisado.
 
 ## Suggested test pyramid / Pirámide de pruebas

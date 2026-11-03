@@ -22,6 +22,9 @@
 - **Do not mark an entirely skipped workflow as a required check.** GitHub path-filtered skipped workflows can leave required checks Pending; conditional jobs plus an always-running aggregator are safer. / Evitar gates bloqueados por filtros.
 - Reusable workflows may implement per-component templates. Avoid giving every service full-repo deploy permissions. / Workflows reutilizables y mínimos permisos.
 
+## Multi-agent scope gate / Control de agentes
+The [FW-029](MULTI_AGENT.md) policy adds an unfiltered [agent-scope workflow](../../.github/workflows/agent-scope.yml) running Python unit tests and a changed-files/task-manifest allowlist for application code. This validates one PR's scope, **not concurrent PR global ownership**. `main` is currently unprotected in the private GitHub repository; human review is required. / Control local sin bloqueo global.
+
 ## Security and supply chain / Seguridad y cadena de suministro
 - Default `permissions: contents: read`; grant `packages: write` only to packaging job, `id-token: write` only to approved cloud deployment job. / Token mínimo por job.
 - Prefer pinned, reviewed GitHub Action **commit SHAs**; update deliberately (Dependabot/Renovate if approved). / Versiones verificadas de Actions.

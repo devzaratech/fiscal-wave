@@ -8,6 +8,18 @@ Every box is **unchecked by default** and must be backed by evidence before it c
 - [ ] Validate architecture PlantUML with an actual renderer (marker checks alone are insufficient) / Validar los diagramas con PlantUML real.
 - [ ] Set GitHub branch protections, review flow and issues/milestones as desired / Configurar protección de rama y tablero.
 
+## Agent coordination, Chile privacy and country boundaries / Agentes, privacidad y países (FW-029–031)
+- [ ] Review and merge [multi-agent protocol](MULTI_AGENT.md), verify Claude/OpenCode/Codex instructions are loaded and use separate worktrees / Verificar instrucciones y worktrees.
+- [ ] Declare branch/base SHA/allowed paths per task; review other open PRs for collisions; forbid overwrites and auto-merges / Contratos y revisión humana.
+- [ ] Execute agent manifest unit tests and PR ownership check; understand that this is **not** a global PR lock / Probar control sin prometer mutex.
+- [ ] Verify current Law 21.719 effective date and bill 18.623-07 status before release / Verificar vigencia real.
+- [ ] Complete personal data inventory, processing role and lawful basis mapping, processors, transfers, notices and retention schedule / Inventario y contratos.
+- [ ] Design/verify rights (access, rectify, suppress when lawful, oppose, block, portability when applicable) and exceptions for signed DTE / Derechos y conservación fiscal.
+- [ ] Establish incident/breach process, risk-based EIPD screening, per-tenant security negative tests and counsel review / Seguridad y revisión jurídica.
+- [ ] Validate [country strategy ADR](../adr/0010-country-repository-strategy.md) before implementing additional jurisdictions / No dividir repos sin caso de negocio.
+
+[FW-029](https://github.com/devzaratech/fiscal-wave/issues/14) · [FW-030](https://github.com/devzaratech/fiscal-wave/issues/15) · [FW-031](https://github.com/devzaratech/fiscal-wave/issues/16) · [Privacy](../privacy/README.md)
+
 ## Engineering standards / Estándares de ingeniería (FW-022, M1/M2)
 - [ ] Review EN/ES SOLID, DRY/KISS/YAGNI, clean naming, pattern catalog, and ADR-0006 / Revisar guías y decisión.
 - [ ] M1: configure compatible formatter, lint, unit tests, typecheck and CI for the **code that exists**, with real outputs / Configurar controles progresivos.
