@@ -32,11 +32,11 @@ FiscalWave aspira a ser una plataforma fiscal **API-first, bilingüe y portable 
 - [SOLID y estándares](docs/es/engineering-standards.md) · [Patrones de diseño](docs/architecture/pattern-catalog.md) · [Contrato de idempotencia](docs/architecture/idempotency-contract.md)
 ## Diagramas de arquitectura
 
-[Ver galería bilingüe](docs/architecture/diagrams.md) con los seis diagramas propuestos en SVG, vistas Mermaid nativas de GitHub y archivos PlantUML originales.
+[Ver galería bilingüe](docs/architecture/diagrams.md) con seis diagramas propuestos en SVG y sus archivos PlantUML originales.
 
 ![Mapa propuesto del sistema FiscalWave](docs/architecture/rendered/system-map.svg)
 
-Para regenerar los diagramas: `bash scripts/render-diagrams.sh` (requiere PlantUML y Graphviz). Los SVG exportados tienen fondo blanco opaco y texto oscuro para verse correctamente en el modo oscuro de GitHub; las vistas Mermaid solicitan un tema claro fijo y se prueban con Chromium en CI, aunque GitHub controla su visor integrado. GitHub Actions comprueba la sincronización. **Son diseños propuestos, no servicios desplegados.**
+Para regenerar los diagramas: `bash scripts/render-diagrams.sh` (requiere PlantUML y Graphviz). Los SVG exportados tienen fondo blanco opaco y texto oscuro, por lo que se ven correctamente tanto en el modo claro como en el oscuro de GitHub. GitHub Actions comprueba la sincronización. **Son diseños propuestos, no servicios desplegados.**
 
 ## Colaboración y transparencia
 Revisar [CONTRIBUTING](CONTRIBUTING.md) y [Definition of Done](docs/planning/QUALITY.md). No subir certificados, CAF reales, datos de clientes, claves ni secretos. Licencia existente: [Apache-2.0](LICENSE).
