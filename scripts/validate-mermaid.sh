@@ -18,5 +18,23 @@ for src in "${files[@]}"; do
   echo "Validating Mermaid: $name"
   "$MERMAID_CLI" -i "$src" -o "$OUT_DIR/$name.svg" -b white -p "$MERMAID_PUPPETEER_CONFIG"
   test -s "$OUT_DIR/$name.svg"
+  # Explicit white canvas: don't rely on CSS/theme selection inside GitHub.
+  # Record the input digest so CI can detect stale tracked Mermaid SVG previews.
+  python3 - "$src" "$OUT_DIR/$name.svg" <<'PY'
+import hashlib
+import re
+import sys
+from pathlib import Path
+source, output = map(Path, sys.argv[1:])
+digest = hashlib.sha256(source.read_bytes()).hexdigest()
+svg = output.read_text(encoding="utf-8")
+root = re.search(r"<svg\\b[^>]*>", svg)
+if not root:
+    raise SystemExit(f"Missing SVG root in {output}")
+canvas = '<rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF"/>'
+marker = f"<!-- fiscalwave-mermaid-sha256:{digest} -->"
+svg = svg[:root.end()] + canvas + marker + svg[root.end():]
+output.write_text(svg, encoding="utf-8")
+PY
 done
 echo "Rendered ${#files[@]} Mermaid diagrams using real Chromium."
