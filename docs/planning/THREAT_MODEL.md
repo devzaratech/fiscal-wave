@@ -11,7 +11,8 @@
 | Leaked CAF/certificate / Fuga de CAF/certificado | Encrypted storage, least privilege, rotation, never log values | Secret scanning and negative access tests |
 | Replay or lost delivery / Reenvío o pérdida | Outbox/inbox, dedupe, audit; reconcile unknown SII outcomes | Simulate timeout and replay |
 | Cost amplification / Abuso de costos | API rate limiting, bounded scaling, IAM permissions, budget alerts, teardown | Artificial traffic + resource inventory |
-| Corrupt audit / Auditoría manipulada | Append-only events, authorization and structured redacted logs | Tamper and missing-event checks |
+| Corrupt audit / Auditoría manipulada | Versioned SHA-256 hash chain, restricted append-only event records, independent signed checkpoints where justified | Mutation/deletion/reordering tests, privileged rewrite threat |
+| Public blockchain privacy leak / Filtración por blockchain | Publish only privacy-reviewed aggregate commitments (e.g., Merkle root), never DTE, RUT, PII, CAF or keys | Inspect public payloads and analyze correlation risks |
 | Compromised CI runner / CI comprometida | OIDC short-lived federation, scoped workflow token, pin dependencies | Attempt unauthorized deploy in lab |
 
 **EN:** Threats are hypotheses until tests and review. **ES:** riesgos propuestos; no declarar mitigación efectiva sin pruebas. No live secrets, taxpayer data or production simulations with unapproved AWS.
