@@ -29,6 +29,7 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 | SOLID, coding standards & patterns | [Engineering standards](docs/en/engineering-standards.md) | [Estándares de ingeniería](docs/es/engineering-standards.md) |
 | Idempotency & pattern catalog | [Idempotency](docs/architecture/idempotency-contract.md) · [Patterns](docs/architecture/pattern-catalog.md) | [Idempotencia](docs/architecture/idempotency-contract.md) · [Patrones](docs/architecture/pattern-catalog.md) |
 | Roadmap | [Roadmap](docs/en/roadmap.md) | [Hoja de ruta](docs/es/roadmap.md) |
+| M0 foundation review | [M0 release evidence](docs/planning/M0-REVIEW.md) | [Evidencia de revisión M0](docs/planning/M0-REVIEW.md) |
 | Backlog, milestones & Scrum | [Planning / Planificación](docs/planning/README.md) | [Planning / Planificación](docs/planning/README.md) |
 | Interviews (original practice exercises) | [Technical practice / Práctica](docs/planning/INTERVIEWS.md) | [Technical practice / Práctica](docs/planning/INTERVIEWS.md) |
 | Cloud cost safety | [FinOps / Costos](docs/planning/FINOPS.md) | [FinOps / Costos](docs/planning/FINOPS.md) |

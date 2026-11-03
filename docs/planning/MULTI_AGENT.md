@@ -10,7 +10,10 @@
 - Read the current `AGENTS.md`, relevant role in `agents/`, FW issue, acceptance criteria, ADR, privacy/SII requirements, and the latest base SHA before coding. / Validar SHA y alcance.
 - **Main is currently unprotected**, and GitHub reported branch rulesets unavailable for this private repository configuration as of 2026-11-03. No technical guarantee of blocked direct pushes: owner must enforce review and merges. / Restricción real, no garantía de bloqueo.
 
-## Ownership model / Modelo de propiedad
+## Agent version and effective permission checks / Verificación de permisos reales
+The project OpenCode reviewer uses the **stable** `permission:` map (not the distinct OpenCode V2 `permissions:` list). Before using an updated/experimental OpenCode version, confirm the loaded agent configuration and the **effective** denial of edit, shell and subagents; documentation alone is not a sandbox. Claude reviewer tool allowlist must likewise be verified in the actual installed version. For any tool without a verified read-only profile, perform the review manually from GitHub. / Verificar la versión y permisos de cada agente.
+
+
 **One task / one write owner / one worktree / one branch / one PR.** / Una historia, un dueño de escritura, un worktree, una rama y un PR.
 
 - Example branches: `feat/FW-025-pfx-vault`, `feat/FW-027-pdf417`. Start from an **approved base SHA**; do not start concurrent agent work from an unreviewed PR unless the owner explicitly approves and records dependency. / Base aprobada.

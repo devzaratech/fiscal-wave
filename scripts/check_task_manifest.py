@@ -15,6 +15,7 @@ TASK_PREFIX = "coordination/tasks/"
 BRANCH_RE = re.compile(r"^(?:feat|fix|docs|chore)/FW-[0-9]{3}-[a-z0-9][a-z0-9-]*$")
 SHA_RE = re.compile(r"^[a-f0-9]{40}$")
 ISSUE_RE = re.compile(r"^FW-[0-9]{3}$")
+AGENT_ID_RE = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$")
 
 
 def relative_path(path):
@@ -38,8 +39,8 @@ def validate_task(task, paths):
     issue, agent, branch, base = (task.get(k) for k in ("issue", "agent", "branch", "base_sha"))
     if not isinstance(issue, str) or not ISSUE_RE.fullmatch(issue):
         errors.append("issue must be FW-XXX / ID inválido")
-    if agent not in ("codex", "claude-code", "opencode", "human"):
-        errors.append("agent not supported / agente inválido")
+    if not isinstance(agent, str) or len(agent) > 64 or not AGENT_ID_RE.fullmatch(agent):
+        errors.append("agent must be a safe provider slug / identificador de agente inválido")
     if not isinstance(branch, str) or not BRANCH_RE.fullmatch(branch):
         errors.append("branch naming invalid / rama inválida")
     if isinstance(issue, str) and isinstance(branch, str) and issue not in branch:

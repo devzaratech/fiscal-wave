@@ -20,6 +20,7 @@
 | Agent selection & handoff / Selección de IA | [AI-AGENT-STRATEGY.md](AI-AGENT-STRATEGY.md) |
 | M1 technology baseline / Stack M1 | [STACK-BASELINE.md](STACK-BASELINE.md) |
 | Start FW-002 / Primer desarrollo | [M1-KICKOFF.md](M1-KICKOFF.md) |
+| M0 review / Revisión de M0 | [M0-REVIEW.md](M0-REVIEW.md) |
 | Agent coordination / Coordinación IA | [MULTI_AGENT.md](MULTI_AGENT.md) |
 | Chile Law 21.719 privacy / Datos personales | [Privacy program / Privacidad](../privacy/README.md) |
 | Country-repository decision / Decisión por país | [ADR-0010](../adr/0010-country-repository-strategy.md) |

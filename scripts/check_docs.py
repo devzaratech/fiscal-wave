@@ -26,6 +26,7 @@ required = [
     ".github/workflows/agent-scope.yml",
     ".claude/agents/fiscalwave-reviewer.md",
     ".opencode/agents/fiscalwave-reviewer.md",
+    "docs/planning/M0-REVIEW.md",
     "docs/planning/AI-AGENT-STRATEGY.md",
     "docs/planning/STACK-BASELINE.md",
     "docs/planning/M1-KICKOFF.md",

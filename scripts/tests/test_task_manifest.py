@@ -39,6 +39,18 @@ class ContractTests(unittest.TestCase):
         bad["allowed_paths"] = ["services//wrong/"]
         self.assertTrue(any("unsafe" in e for e in m.validate_task(bad, [])))
 
+    def test_antigravity_and_new_agent_allowed(self):
+        t = task()
+        for provider in ("antigravity", "opencode", "custom-agent-5"):
+            t["agent"] = provider
+            self.assertEqual([], m.validate_task(t, ["services/credentials/Port.java"]))
+
+    def test_unsafe_agent_identifier_rejected(self):
+        t = task()
+        for provider in ("", "../other", "agent with spaces", "Agent", "-agent"):
+            t["agent"] = provider
+            self.assertTrue(any("agent" in e for e in m.validate_task(t, [])))
+
     def test_app_change_without_task_fails(self):
         self.assertTrue(m.check_paths(["apps/shell/src/App.tsx"], Path(".")))
 

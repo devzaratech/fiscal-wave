@@ -16,9 +16,10 @@ User -> MFE : Issue synthetic DTE / Emitir DTE de prueba
 MFE -> Fiscal : issue(idempotency key, issuer)
 Fiscal -> DB : Unique issuer + type + folio; store intent
 DB --> Fiscal : Authorized range reserved
-Fiscal -> CAF : Obtain authorized CAF key (restricted)
-CAF --> Fiscal : Temporary key access
-Fiscal -> Fiscal : Construct TED (DD + FRMT)
+Fiscal -> Fiscal : Construct TED DD payload
+Fiscal -> CAF : Authorize issuer/type/range; sign DD in isolated key port
+CAF --> Fiscal : FRMT signature + public CAF metadata
+Fiscal -> Fiscal : Assemble TED (DD + FRMT)
 Fiscal -> XSD : Validate document XML
 XSD --> Fiscal : Schema + business checks
 Fiscal -> PFX : Sign whole XML with authorized signer
