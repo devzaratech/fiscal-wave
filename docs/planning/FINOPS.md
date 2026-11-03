@@ -13,6 +13,11 @@
 - [ ] No production customer data or live fiscal credentials in AWS labs / Solo datos sintéticos.
 - [ ] `terraform destroy`, state inventory, manual console inspection and billing review planned / Destrucción y verificación.
 
+## Optional Redis/Mongo and certificate custody costs / Costos de datos y bóveda
+- Local Redis/Mongo with Docker first; managed ElastiCache, MongoDB Atlas or DocumentDB may incur ongoing compute/storage/network charges even for an idle MVP. / Probar local antes de contratar.
+- Count vault storage, AWS Secrets Manager secret versions/API use, KMS keys/requests, private object storage, backups and certificate renewals. Check binary secret size restrictions and encryption authorization before design. / Costos de PFX/CAF y secretos.
+- No actual certificate, CAF, taxpayer data or public-chain operation in paid cloud labs without explicit owner approval. / Sin credenciales reales en pruebas cloud.
+
 ## Costs you can forget / Costos fáciles de olvidar
 NAT Gateway (hourly and data); load balancer (hour and capacity); IPv4 public address (hourly); ECS/Fargate running tasks; RDS instances/storage/backups; log ingestion and retention; egress and cross-AZ traffic; S3 requests/storage and recovery copies.
 

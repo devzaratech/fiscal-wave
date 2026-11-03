@@ -14,6 +14,11 @@ required = [
     "docs/en/engineering-standards.md", "docs/es/engineering-standards.md",
     "docs/architecture/pattern-catalog.md",
     "docs/architecture/idempotency-contract.md",
+    "docs/planning/DATA-PLATFORMS.md",
+    "docs/planning/SII-DTE-LIFECYCLE.md",
+    "docs/planning/PROVIDER-CAPABILITIES.md",
+    "docs/adr/0008-polyglot-persistence.md",
+    "docs/adr/0009-credential-custody-and-signing.md",
     "docs/adr/0006-engineering-standards.md",
     "docs/planning/README.md", "docs/planning/BACKLOG.md",
     "docs/planning/MILESTONES.md", "docs/planning/SCRUM.md",
@@ -25,6 +30,7 @@ required = [
     "docs/architecture/system-map.puml",
     "docs/architecture/dte-lifecycle.puml", "docs/architecture/aws-lab.puml",
     "docs/architecture/idempotency-sequence.puml",
+    "docs/architecture/sii-signing-and-pdf.puml",
 ]
 errors = []
 for name in required:

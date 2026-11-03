@@ -15,6 +15,8 @@
 - [ ] Metrics, tracing, failure modes, idempotency and rollback documented where relevant / Observabilidad y recuperación.
 - [ ] Any cloud cost quantified, approved, monitored and teardown verified / Costos y destrucción comprobados.
 - [ ] Tax-related rules trace to dated official sources and synthetic fixtures / Fuentes oficiales fechadas.
+- [ ] For fiscal XML/PDF changes, verify PFX signer is distinct from CAF private timbre key, official versioned XSD, safe parser, TED/XMLDSig, PDF417 and source XML integrity; no false SII acceptance claims / Certificados, timbre y PDF con pruebas reales.
+- [ ] Optional Redis/Mongo adapters cannot alter authoritative PostgreSQL folio/idempotency and tenant isolation / Bases opcionales sin comprometer emisión.
 - [ ] Required CI gate always runs on PR; Maven/TS checks, security and contract jobs executed or explicitly marked not applicable / Gate CI siempre ejecutado, resultados o N/A.
 - [ ] Release artifacts immutable (commit/digest), deployment approval/rollback and schema compatibility checked when applicable / Artefactos, aprobación y rollback.
 - [ ] PR reviewed and no unresolved blockers; implemented status distinguished from future work / PR revisado.
