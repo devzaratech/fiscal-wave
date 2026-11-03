@@ -41,6 +41,7 @@ required = [
     "docs/architecture/dte-lifecycle.puml", "docs/architecture/aws-lab.puml",
     "docs/architecture/idempotency-sequence.puml",
     "docs/architecture/sii-signing-and-pdf.puml",
+    "docs/architecture/privacy-boundaries.puml",
 ]
 errors = []
 for name in required:
