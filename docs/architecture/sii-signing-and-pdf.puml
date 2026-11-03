@@ -1,4 +1,6 @@
 @startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontColor #111111
 title FiscalWave — Chile SII signing and rendering (proposed / propuesto)
 skinparam shadowing false
 autonumber
