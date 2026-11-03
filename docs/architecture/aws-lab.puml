@@ -1,0 +1,35 @@
+@startuml
+title FiscalWave - temporary AWS learning lab (NOT production)
+skinparam shadowing false
+node "Developer PC / local CI" as Dev
+cloud "AWS account - sandbox only" {
+  rectangle "CloudFront + S3\nMFE static artifacts (optional lab)" as Static
+  rectangle "Application Load Balancer\nHourly/LCU charges" as ALB
+  node "ECS / Fargate (short lived)" {
+    component "Fiscal API task A" as A
+    component "Fiscal API task B" as B
+  }
+  queue "SQS / DLQ" as SQS
+  component "Lambda Java" as Lambda
+  folder "S3 private documents" as S3
+  database "RDS (optional; costly)" as RDS
+  rectangle "IAM + budget alerts + tags\nTerraform destroy" as Guard
+}
+Dev --> Static : browser
+Dev --> ALB : test HTTPS
+ALB --> A : health checks + routes
+ALB --> B : health checks + routes
+A --> SQS : event
+SQS --> Lambda : worker
+Lambda --> S3 : IAM role only
+A --> RDS : optional lab
+B --> RDS : optional lab
+Guard .. ALB
+Guard .. RDS
+Guard .. Lambda
+note bottom
+No always-on NAT Gateway, EKS or RDS in the initial lab.
+Budget alerts are not a guaranteed hard spending cap.
+All billable resources require owner approval and teardown.
+end note
+@enduml

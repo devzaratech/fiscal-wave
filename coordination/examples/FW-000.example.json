@@ -1,0 +1,20 @@
+{
+  "issue": "FW-000",
+  "agent": "codex",
+  "branch": "feat/FW-000-example",
+  "base_sha": "0000000000000000000000000000000000000000",
+  "allowed_paths": [
+    "services/example/",
+    "docs/en/example.md",
+    "docs/es/example.md"
+  ],
+  "shared_review_required": [
+    "contracts/openapi/"
+  ],
+  "handoff": {
+    "tests_run": [],
+    "tests_not_run": [],
+    "risks": [],
+    "next_step": "Replace with real work. / Reemplazar con tarea real."
+  }
+}

@@ -1,0 +1,48 @@
+# Build and local tools
+target/
+**/target/
+node_modules/
+**/node_modules/
+dist/
+build/
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+*.log
+
+# Secrets and live credentials: never commit
+.env
+.env.*
+!.env.example
+secrets/
+certificates/
+*.p12
+*.pfx
+*.pem
+*.key
+*.jks
+*.keystore
+*.asc
+*.kdbx
+
+# Cloud/IaC state and local artifacts
+.terraform/
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
+*.auto.tfvars
+.aws/
+.aws-sam/
+.coverage
+coverage/
+*.sqlite
+*.db
+
+# Local-only agent context / Contexto local no versionado
+CLAUDE.local.md
+.claude/settings.local.json
+.opencode/plans/

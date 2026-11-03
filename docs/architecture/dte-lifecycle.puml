@@ -1,0 +1,40 @@
+@startuml
+title FiscalWave - proposed DTE lifecycle / ciclo DTE propuesto
+skinparam shadowing false
+actor "Operator / Operador" as User
+participant "Invoices MFE" as UI
+participant "Fiscal Document Service" as Fiscal
+database "Fiscal DB + Outbox" as DB
+queue "Message broker" as Broker
+participant "Chile SII Connector" as Connector
+participant "SII test/authorized" as SII
+User -> UI : Create draft / Crear borrador
+UI -> Fiscal : POST draft (idempotency key)
+Fiscal -> DB : Validate and persist
+Fiscal --> UI : Draft ID + validation errors
+User -> UI : Request issuance / Solicitar emisión
+UI -> Fiscal : Issue (idempotency key)
+Fiscal -> DB : Transaction: unique folio, signed XML, outbox
+DB --> Fiscal : committed
+Fiscal --> UI : Pending dispatch / Pendiente
+DB -> Broker : Publish via outbox worker
+Broker -> Connector : Delivery command (deduplicated)
+Connector -> SII : Submit when authorized
+alt accepted / aceptado
+  SII --> Connector : Reference + status
+  Connector -> Broker : accepted result
+else rejected / rechazado
+  SII --> Connector : Reason code
+  Connector -> Broker : rejected result
+else timeout / resultado incierto
+  Connector -> Broker : needs reconciliation
+  note right of Connector
+  No blind resubmission
+  / no reenvío ciego
+  end note
+end
+Broker -> Fiscal : Status event (idempotent)
+Fiscal -> DB : Store state + audit
+UI -> Fiscal : Query status
+Fiscal --> UI : Current state / Estado vigente
+@enduml

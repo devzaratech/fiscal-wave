@@ -1,0 +1,44 @@
+@startuml
+title FiscalWave — Chile personal data boundaries / Límites de datos personales (propuesto)
+left to right direction
+skinparam shadowing false
+skinparam componentStyle rectangle
+actor "Individual data subject\nTitular de datos" as Subject
+actor "Tenant organization\nEmpresa cliente" as Tenant
+rectangle "FiscalWave (proposed)" {
+  component "Tenant identity/roles\nOIDC + authorization" as Identity
+  component "Fiscal Document Service\nlegal XML owner" as Fiscal
+  component "Privacy request workflow\nDSAR + exception review" as Rights
+  component "SII Connector" as Sii
+  component "Audit / incident response\nredacted metadata" as Audit
+  database "PostgreSQL scoped by tenant\nidempotency + indexes" as Pg
+  folder "Private document storage\nsigned XML, PDF, retention" as Store
+  folder "Credential vault\nPFX vs CAF separate" as Vault
+  component "Optional Redis/Mongo\nnon-authoritative and controlled" as Cache
+}
+cloud "Chilean SII (authorized)" as SII
+cloud "Approved processors/regions\ntransfer review required" as Vendors
+Tenant --> Identity : login and role / acceso
+Tenant --> Fiscal : create DTE / emitir
+Fiscal --> Pg : transaction and indexes
+Fiscal --> Store : signed XML / PDF
+Fiscal --> Vault : authorized signing / claves
+Fiscal --> Sii : authorized delivery / envío
+Sii --> SII : SII tests/production if allowed
+Fiscal --> Audit : safe audit / auditoría
+Subject --> Rights : verified legal request / derechos
+Rights --> Identity : eligibility, profile
+Rights --> Pg : eligible personal metadata
+Rights --> Store : tax retention legal review
+Rights --> Audit : decision evidence
+Identity --> Vendors : only assessed / proveedor autorizado
+note bottom of Rights
+No automatic deletion of signed XML.
+Apply verified statutory exceptions
+and record decision.
+end note
+note bottom of Vendors
+Separate Git repositories do NOT
+provide residency or transfer compliance.
+end note
+@enduml

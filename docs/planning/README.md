@@ -1,0 +1,38 @@
+# Planning hub / Centro de planificación
+
+**EN:** One product backlog, increment-based milestones, a lightweight Scrum cadence and evidence-first quality gates. No work is treated as delivered because an agent generated a plan. **ES:** un backlog, hitos por resultados, Scrum liviano y pruebas verificables; escribir un plan no significa haberlo ejecutado.
+
+| Artifact / Artefacto | Link |
+|---|---|
+| Product backlog / Backlog | [BACKLOG.md](BACKLOG.md) |
+| Immediate TODOs / Pendientes inmediatos | [TODO.md](TODO.md) |
+| Threat model / Modelo de amenazas | [THREAT_MODEL.md](THREAT_MODEL.md) |
+| Practice kit / Ejercicios | [../../practice/README.md](../../practice/README.md) |
+| Milestones / Hitos | [MILESTONES.md](MILESTONES.md) |
+| Scrum and Agile / Scrum y Agile | [SCRUM.md](SCRUM.md) |
+| Quality + DoD / Calidad + Definición de terminado | [QUALITY.md](QUALITY.md) |
+| CI/CD architecture / Arquitectura CI/CD | [CICD.md](CICD.md) |
+| Engineering standards / Estándares de ingeniería | [EN](../en/engineering-standards.md) / [ES](../es/engineering-standards.md) |
+| Patterns / Patrones | [Pattern catalog / Catálogo](../architecture/pattern-catalog.md) |
+| Idempotency / Idempotencia | [Idempotency contract / Contrato](../architecture/idempotency-contract.md) |
+| Interview preparation / Entrevistas | [INTERVIEWS.md](INTERVIEWS.md) |
+| Cloud cost safety / FinOps | [FINOPS.md](FINOPS.md) |
+| Agent selection & handoff / Selección de IA | [AI-AGENT-STRATEGY.md](AI-AGENT-STRATEGY.md) |
+| M1 technology baseline / Stack M1 | [STACK-BASELINE.md](STACK-BASELINE.md) |
+| Start FW-002 / Primer desarrollo | [M1-KICKOFF.md](M1-KICKOFF.md) |
+| M0 review / Revisión de M0 | [M0-REVIEW.md](M0-REVIEW.md) |
+| Agent coordination / Coordinación IA | [MULTI_AGENT.md](MULTI_AGENT.md) |
+| Chile Law 21.719 privacy / Datos personales | [Privacy program / Privacidad](../privacy/README.md) |
+| Country-repository decision / Decisión por país | [ADR-0010](../adr/0010-country-repository-strategy.md) |
+| Regulatory evidence / Cumplimiento | [COMPLIANCE.md](COMPLIANCE.md) |
+| Redis, MongoDB / Persistencia | [DATA-PLATFORMS.md](DATA-PLATFORMS.md) |
+| PFX, CAF, XSD, PDF417 / Flujo fiscal | [SII-DTE-LIFECYCLE.md](SII-DTE-LIFECYCLE.md) |
+| LibreDTE/vendor matrix / Comparativa | [PROVIDER-CAPABILITIES.md](PROVIDER-CAPABILITIES.md) |
+| i18n / Localización | [I18N.md](I18N.md) |
+| Hiring skills / Competencias laborales | [EMPLOYABILITY.md](EMPLOYABILITY.md) |
+
+## Status convention / Convención de estados
+`TODO` / pendiente; `IN_PROGRESS` / en curso; `BLOCKED` / bloqueado; `DONE` / completado con evidencia. Current items are TODO unless an implementation and its acceptance evidence exist.
+
+## How to work / Cómo trabajar
+Pick one vertical-slice item, open issue, define Sprint Goal, implement/test, show a demo, review and replan. / Elegir una historia vertical, crear issue, definir objetivo del sprint, implementar/probar, demostrar, revisar y reajustar.

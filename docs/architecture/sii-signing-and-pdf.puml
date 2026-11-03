@@ -1,0 +1,48 @@
+@startuml
+title FiscalWave — Chile SII signing and rendering (proposed / propuesto)
+skinparam shadowing false
+autonumber
+actor "Authorized issuer / Emisor autorizado" as User
+participant "Invoices MFE" as MFE
+participant "Fiscal Document Service" as Fiscal
+database "PostgreSQL\nfolios and idempotency" as DB
+participant "Signer credential port\nPKCS#12 (.pfx/.p12)" as PFX
+participant "CAF credential port\nRSASK private timbre key" as CAF
+participant "Official XSD validator\nversioned offline bundle" as XSD
+participant "PDF renderer\nPDF417" as PDF
+database "Private object storage\nimmutable signed XML + PDF" as Store
+participant "SII Connector" as SII
+User -> MFE : Issue synthetic DTE / Emitir DTE de prueba
+MFE -> Fiscal : issue(idempotency key, issuer)
+Fiscal -> DB : Unique issuer + type + folio; store intent
+DB --> Fiscal : Authorized range reserved
+Fiscal -> Fiscal : Construct TED DD payload
+Fiscal -> CAF : Authorize issuer/type/range; sign DD in isolated key port
+CAF --> Fiscal : FRMT signature + public CAF metadata
+Fiscal -> Fiscal : Assemble TED (DD + FRMT)
+Fiscal -> XSD : Validate document XML
+XSD --> Fiscal : Schema + business checks
+Fiscal -> PFX : Sign whole XML with authorized signer
+PFX --> Fiscal : XMLDSig result
+Fiscal -> XSD : Validate final signed document
+XSD --> Fiscal : Valid or error
+Fiscal -> Store : Persist immutable signed XML
+Fiscal -> PDF : Render stored signed XML including TED
+PDF --> Fiscal : PDF + scannable PDF417
+Fiscal -> Store : Persist derived PDF
+Fiscal -> DB : Audit metadata + outbox
+Fiscal --> MFE : Document ID and pending status
+DB -> SII : Async outbox submission command (when authorized)
+note right of CAF
+CAF private timbre key != PFX signer key
+Never store secrets in Redis/Mongo.
+end note
+note right of PDF
+PDF is representation, XML is
+tax document; print sample tests pending.
+end note
+note over SII
+No real submissions without
+authorized issuer and SII process.
+end note
+@enduml
