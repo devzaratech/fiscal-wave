@@ -32,5 +32,10 @@
 - RCV is official; internal reporting does not replace it. / Reportes propios no reemplazan RCV.
 - Personal-data, retention, accounting and business licensing obligations require jurisdiction-specific review.
 
+## Personal-data law separate from SII certification / Protección de datos independiente del SII
+- [Law 21.719 readiness / Programa Ley 21.719](../privacy/CHILE-21719.md) is a separate compliance gate for personal data, including taxpayer identifiers and signed XML/PDF; [source](https://www.bcn.cl/leychile/navegar?i=1209272). / La certificación tributaria no certifica privacidad.
+- [Data inventory](../privacy/DATA-INVENTORY.md), [DSAR and retention](../privacy/DSAR-RETENTION.md), [incident response](../privacy/INCIDENT-RUNBOOK.md), [privacy release gates](../privacy/RELEASE-GATES.md) all require actual implementation and legal review before production. / Controles con evidencia.
+- Bill 18.623-07 may modify effective date; as reviewed 2026-11-03 the **published law still states 2026-12-01**; never assume proposed 2027 date is enacted. / No adelantar postergación.
+
 ## Milestone exit / Salida de hito
 M4 only after legitimate issuer eligibility, official test evidence, legal review and operational runbook. / M4 depende de autorización, evidencia y revisión.
