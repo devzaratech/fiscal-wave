@@ -6,6 +6,7 @@ on:
       - 'docs/architecture/*.puml'
       - 'scripts/diagrams.py'
       - 'scripts/render-diagrams.sh'
+      - 'scripts/validate-mermaid.sh'
       - '.github/workflows/diagram-assets.yml'
   workflow_dispatch:
 
@@ -42,6 +43,27 @@ jobs:
           sudo apt-get install -y -qq plantuml graphviz
       - name: Regenerate SVG and supported Mermaid diagrams
         run: bash scripts/render-diagrams.sh
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned Mermaid renderer
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "1"
+        run: |
+          mkdir -p "$RUNNER_TEMP/mermaid-cli"
+          npm install --prefix "$RUNNER_TEMP/mermaid-cli" --no-save --no-audit --no-fund --ignore-scripts @mermaid-js/mermaid-cli@11.17.0
+          CHROME="$(command -v google-chrome || command -v chromium)"
+          test -n "$CHROME"
+          printf '{"executablePath":"%s","args":["--no-sandbox"]}\n' "$CHROME" > "$RUNNER_TEMP/mermaid-puppeteer.json"
+      - name: Regenerate white Mermaid SVG previews
+        env:
+          MERMAID_CLI: ${{ runner.temp }}/mermaid-cli/node_modules/.bin/mmdc
+          MERMAID_PUPPETEER_CONFIG: ${{ runner.temp }}/mermaid-puppeteer.json
+          MERMAID_OUTPUT_DIR: docs/architecture/rendered/mermaid
+        run: |
+          mkdir -p "$MERMAID_OUTPUT_DIR"
+          find "$MERMAID_OUTPUT_DIR" -maxdepth 1 -type f -name '*.svg' -delete
+          bash scripts/validate-mermaid.sh
       - name: Commit generated assets to this branch only
         shell: bash
         env:
