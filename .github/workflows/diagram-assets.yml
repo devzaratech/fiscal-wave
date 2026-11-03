@@ -1,12 +1,5 @@
 name: Regenerate diagram assets on feature branches
 on:
-  push:
-    branches-ignore: [main]
-    paths:
-      - 'docs/architecture/*.puml'
-      - 'scripts/diagrams.py'
-      - 'scripts/render-diagrams.sh'
-      - '.github/workflows/diagram-assets.yml'
   workflow_dispatch:
 
 permissions:
