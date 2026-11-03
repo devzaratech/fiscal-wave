@@ -23,7 +23,7 @@
 - Reusable workflows may implement per-component templates. Avoid giving every service full-repo deploy permissions. / Workflows reutilizables y mínimos permisos.
 
 ## Multi-agent scope gate / Control de agentes
-The [FW-029](MULTI_AGENT.md) policy adds an unfiltered [agent-scope workflow](../../.github/workflows/agent-scope.yml) running Python unit tests and a changed-files/task-manifest allowlist for application code. This validates one PR's scope, **not concurrent PR global ownership**. `main` is currently unprotected in the private GitHub repository; human review is required. / Control local sin bloqueo global.
+The [FW-029](MULTI_AGENT.md) policy adds an unfiltered [agent-scope workflow](../../.github/workflows/agent-scope.yml) running Python unit tests and a changed-files/task-manifest allowlist for application code. It also queries open PR files to flag cross-branch overlap; these are **advisory/failing CI checks**, not an atomic lock or server-side main protection. `main` is currently unprotected in the private GitHub repository; human review is required. / Control local sin bloqueo global.
 
 ## Security and supply chain / Seguridad y cadena de suministro
 - Default `permissions: contents: read`; grant `packages: write` only to packaging job, `id-token: write` only to approved cloud deployment job. / Token mínimo por job.

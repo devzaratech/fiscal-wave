@@ -13,7 +13,7 @@
 - Example branches: `feat/FW-025-pfx-vault`, `feat/FW-027-pdf417`. Start from an **approved base SHA**; do not start concurrent agent work from an unreviewed PR unless the owner explicitly approves and records dependency. / Base aprobada.
 - Agents declare exact allowed directories/files in `coordination/tasks/FW-XXX.json`; a task contract must exist for PRs changing `services/`, `apps/`, `jurisdictions/`, `contracts/` or `infrastructure/`. / Declarar rutas antes de implementar.
 - `contracts/`, `AGENTS.md`, `CLAUDE.md`, `.github/`, `docs/adr/`, `docs/privacy/` and other shared files require **human coordination and review**. An agent cannot infer ownership merely by touching a file. / Compartidos reservados.
-- Before starting, inspect **all open PRs**, task contracts, and changed paths for overlap. Different branches do not see each other's unmerged contracts. Local CI **cannot acquire a global lock**. / Revisar PRs concurrentes.
+- Before starting, inspect **all open PRs**, task contracts, and changed paths for overlap. GitHub Actions also queries other open PR changed files, but simultaneous drafts can race and no GitHub API check can replace a protected merge policy. / Revisar PRs concurrentes.
 - If two tasks need the same contract/API, one owner edits it in a separate contract-first PR; the other rebases after approval. / Primero contrato común, luego consumidores.
 - Do not `git reset --hard`, `git push --force`, `git checkout --` or clean another agent's changes; never switch a shared working directory used by another process. / Sin comandos destructivos sobre trabajo ajeno.
 - If unexpected unstaged changes or unknown ownership are detected, **stop writing** and ask the human owner to reconcile. / Detener escritura ante conflicto.
@@ -44,7 +44,7 @@ Provide the following in the issue/PR and structured task contract:
 ## Executable validation / Validación ejecutable
 - `python3 -m unittest discover -s scripts/tests -v`
 - `python3 scripts/check_task_manifest.py --changed-files-file /tmp/changed.txt`
-- CI computes the PR changed paths, requires a task JSON for application changes, and checks declared ownership. It does **not** compare against every PR automatically. / Validación de alcance local, no mutex entre ramas.
+- CI computes the PR changed paths, requires a task JSON for application changes, and checks declared ownership. It also compares changed filenames against other open PRs on the same base branch through a read-only GitHub API call. This catches many collisions but **does not create a global lock or protect direct pushes**. / Validación de alcance local, no mutex entre ramas.
 
 ## Quality and legal constraints / Calidad y normativa
 - Read [Definition of Done](QUALITY.md), [CI/CD](CICD.md), [Chile 21.719](../privacy/CHILE-21719.md) and [country isolation decision](../adr/0010-country-repository-strategy.md).
