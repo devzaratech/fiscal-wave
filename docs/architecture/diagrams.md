@@ -19,6 +19,7 @@ Conversion is strict and limited to the PlantUML constructs in this repository. 
 
 ```mermaid
 %% Generated from aws-lab.puml; edit the PlantUML source, not this file.
+%%{init: {"theme":"base","themeVariables":{"background":"#FFFFFF","darkMode":false,"primaryColor":"#FFFFFF","primaryTextColor":"#111111","primaryBorderColor":"#334155","secondaryColor":"#F1F5F9","tertiaryColor":"#FFFFFF","lineColor":"#475569","textColor":"#111111","actorBkg":"#FFFFFF","actorTextColor":"#111111"},"themeCSS":"svg { background-color: #FFFFFF !important; }"}}%%
 flowchart TD
     Dev["Developer PC / local CI"]
     subgraph group_1["AWS account - sandbox only"]
@@ -62,6 +63,7 @@ flowchart TD
 
 ```mermaid
 %% Generated from dte-lifecycle.puml; edit the PlantUML source, not this file.
+%%{init: {"theme":"base","themeVariables":{"background":"#FFFFFF","darkMode":false,"primaryColor":"#FFFFFF","primaryTextColor":"#111111","primaryBorderColor":"#334155","secondaryColor":"#F1F5F9","tertiaryColor":"#FFFFFF","lineColor":"#475569","textColor":"#111111","actorBkg":"#FFFFFF","actorTextColor":"#111111"},"themeCSS":"svg { background-color: #FFFFFF !important; }"}}%%
 sequenceDiagram
     actor User as Operator / Operador
     participant UI as Invoices MFE
@@ -111,6 +113,7 @@ sequenceDiagram
 
 ```mermaid
 %% Generated from idempotency-sequence.puml; edit the PlantUML source, not this file.
+%%{init: {"theme":"base","themeVariables":{"background":"#FFFFFF","darkMode":false,"primaryColor":"#FFFFFF","primaryTextColor":"#111111","primaryBorderColor":"#334155","secondaryColor":"#F1F5F9","tertiaryColor":"#FFFFFF","lineColor":"#475569","textColor":"#111111","actorBkg":"#FFFFFF","actorTextColor":"#111111"},"themeCSS":"svg { background-color: #FFFFFF !important; }"}}%%
 sequenceDiagram
     actor Client as Client
     participant API as Fiscal API
@@ -118,7 +121,7 @@ sequenceDiagram
     participant Q as Event broker
     participant SII as SII Connector
     Client->>API: POST /issue + Idempotency-Key
-    API->>DB: Authenticate tenant; reserve scoped key + fingerprint
+    API->>DB: Authenticate tenant#59; reserve scoped key + fingerprint
     alt new / nueva
     DB-->>API: reserved
     API->>DB: Transaction: allocate unique folio,<br/>sign document, save outbox + result
@@ -150,6 +153,7 @@ sequenceDiagram
 
 ```mermaid
 %% Generated from privacy-boundaries.puml; edit the PlantUML source, not this file.
+%%{init: {"theme":"base","themeVariables":{"background":"#FFFFFF","darkMode":false,"primaryColor":"#FFFFFF","primaryTextColor":"#111111","primaryBorderColor":"#334155","secondaryColor":"#F1F5F9","tertiaryColor":"#FFFFFF","lineColor":"#475569","textColor":"#111111","actorBkg":"#FFFFFF","actorTextColor":"#111111"},"themeCSS":"svg { background-color: #FFFFFF !important; }"}}%%
 flowchart LR
     Subject["Individual data subject<br/>Titular de datos"]
     Tenant["Tenant organization<br/>Empresa cliente"]
@@ -199,6 +203,7 @@ flowchart LR
 
 ```mermaid
 %% Generated from sii-signing-and-pdf.puml; edit the PlantUML source, not this file.
+%%{init: {"theme":"base","themeVariables":{"background":"#FFFFFF","darkMode":false,"primaryColor":"#FFFFFF","primaryTextColor":"#111111","primaryBorderColor":"#334155","secondaryColor":"#F1F5F9","tertiaryColor":"#FFFFFF","lineColor":"#475569","textColor":"#111111","actorBkg":"#FFFFFF","actorTextColor":"#111111"},"themeCSS":"svg { background-color: #FFFFFF !important; }"}}%%
 sequenceDiagram
     autonumber
     actor User as Authorized issuer / Emisor autorizado
@@ -213,10 +218,10 @@ sequenceDiagram
     participant SII as SII Connector
     User->>MFE: Issue synthetic DTE / Emitir DTE de prueba
     MFE->>Fiscal: issue(idempotency key, issuer)
-    Fiscal->>DB: Unique issuer + type + folio; store intent
+    Fiscal->>DB: Unique issuer + type + folio#59; store intent
     DB-->>Fiscal: Authorized range reserved
     Fiscal->>Fiscal: Construct TED DD payload
-    Fiscal->>CAF: Authorize issuer/type/range; sign DD in isolated key port
+    Fiscal->>CAF: Authorize issuer/type/range#59; sign DD in isolated key port
     CAF-->>Fiscal: FRMT signature + public CAF metadata
     Fiscal->>Fiscal: Assemble TED (DD + FRMT)
     Fiscal->>XSD: Validate document XML
@@ -233,7 +238,7 @@ sequenceDiagram
     Fiscal-->>MFE: Document ID and pending status
     DB->>SII: Async outbox submission command (when authorized)
     Note right of CAF: CAF private timbre key != PFX signer key Never store secrets in Redis/Mongo.
-    Note right of PDF: PDF is representation, XML is tax document; print sample tests pending.
+    Note right of PDF: PDF is representation, XML is tax document#59; print sample tests pending.
     Note over SII: No real submissions without authorized issuer and SII process.
 ```
 
@@ -250,6 +255,7 @@ sequenceDiagram
 
 ```mermaid
 %% Generated from system-map.puml; edit the PlantUML source, not this file.
+%%{init: {"theme":"base","themeVariables":{"background":"#FFFFFF","darkMode":false,"primaryColor":"#FFFFFF","primaryTextColor":"#111111","primaryBorderColor":"#334155","secondaryColor":"#F1F5F9","tertiaryColor":"#FFFFFF","lineColor":"#475569","textColor":"#111111","actorBkg":"#FFFFFF","actorTextColor":"#111111"},"themeCSS":"svg { background-color: #FFFFFF !important; }"}}%%
 flowchart LR
     Operator["Operator / Operador"]
     OIDC["OIDC Provider"]
