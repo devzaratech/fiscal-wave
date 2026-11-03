@@ -38,7 +38,7 @@ class DiagramConversionTest(unittest.TestCase):
                 svg = svg_file.read_text(encoding="utf-8")
                 self.assertRegex(
                     svg,
-                    r'<svg\\b[^>]*><rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF"/>',
+                    r'<svg\b[^>]*><rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF"/>',
                 )
 
     def test_unknown_syntax_fails_closed(self):
