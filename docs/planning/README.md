@@ -11,6 +11,7 @@
 | Milestones / Hitos | [MILESTONES.md](MILESTONES.md) |
 | Scrum and Agile / Scrum y Agile | [SCRUM.md](SCRUM.md) |
 | Quality + DoD / Calidad + Definición de terminado | [QUALITY.md](QUALITY.md) |
+| CI/CD architecture / Arquitectura CI/CD | [CICD.md](CICD.md) |
 | Engineering standards / Estándares de ingeniería | [EN](../en/engineering-standards.md) / [ES](../es/engineering-standards.md) |
 | Patterns / Patrones | [Pattern catalog / Catálogo](../architecture/pattern-catalog.md) |
 | Idempotency / Idempotencia | [Idempotency contract / Contrato](../architecture/idempotency-contract.md) |

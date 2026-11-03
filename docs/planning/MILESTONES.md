@@ -5,11 +5,11 @@ All milestones are **proposed, not complete** / Todos los hitos están **propues
 | ID | Outcome (EN) / Resultado (ES) | Acceptance evidence / Evidencia de aceptación | Status |
 |---|---|---|---|
 | M0 | Reviewed bilingual foundation / Base documental bilingüe revisada | Docs + diagrams + agent rules + backlog merged after review / docs fusionados tras revisión | IN_PROGRESS |
-| M1 | Local runnable distributed slice + engineering baseline / Flujo local y estándares | Two APIs + shell/invoice MFE + PostgreSQL + Compose + CI + synthetic flow; FW-022 SOLID/pattern guidelines and selected real format/lint/tests configured / Código, CI y estándares con evidencia | TODO |
+| M1 | Local runnable distributed slice + quality CI / Flujo local y CI | Two APIs + shell/invoice MFE + Compose, FW-022 engineering rules and FW-023 Java/React PR build/test gate (no cloud), reproducible evidence / CI sin recursos AWS | TODO |
 | M2 | Correct offline DTE flow / Flujo DTE offline correcto | DTE 33/34, signed artifacts, official schema sources, FW-022 HTTP/event idempotency with replay/conflict/timeout and concurrency/folio tests / Pruebas de idempotencia y concurrencia | TODO |
-| M3 | Cost-limited AWS lab / Laboratorio AWS con control de costos | IAM/S3/Lambda/SQS; temporary ECS + ALB failover; terraform destroy evidence; actual cost checked | TODO |
+| M3 | Cost-limited AWS CI/CD lab / Laboratorio AWS y despliegue controlado | IAM/S3/Lambda/SQS, temporary ECS/ALB, FW-023 manual approved deploy and rollback, Terraform destroy evidence and actual cost review / Aprobar costos y verificar destrucción | TODO |
 | M4 | Chilean official test path / Ruta oficial Chile | Authorized test issuer, SII test/certification evidence and documented outcome; no invented approvals | TODO |
-| M5 | Pilot operational readiness + verifiable audit / Piloto y auditoría verificable | Tenant isolation, FW-021 local SHA-256 hash chain and tamper tests, restore drills, monitoring, support, customer approval / Cadena de hashes, pruebas de alteración y operación | TODO |
+| M5 | Pilot operational readiness + verifiable audit / Piloto y auditoría verificable | Tenant isolation, FW-021 cryptographic audit, FW-023 protected release/rollback, restore drills, monitoring and authorized pilot / Entrega segura con aprobaciones | TODO |
 | M6 | Expansion decision / Decisión de expansión | Research and validated need before payments or additional country | TODO |
 | M7 (optional / opcional) | Independent audit proof / Prueba independiente de auditoría | FW-021: compare signed checkpoints, WORM and Merkle anchoring; optional blockchain adapter design and synthetic PoC with approved privacy/cost review; no real DTE on-chain / Blockchain no obligatorio | TODO |
 

@@ -18,6 +18,16 @@ Every box is **unchecked by default** and must be backed by evidence before it c
 
 [FW-022](https://github.com/devzaratech/fiscal-wave/issues/7) · [EN](../en/engineering-standards.md) · [ES](../es/engineering-standards.md)
 
+## CI/CD / Integración y entrega continua (FW-023)
+- [ ] M1: Always-run PR quality gate plus selective Java Maven and React/TS jobs; do not block merges with skipped required workflows / Gate obligatorio siempre ejecutado.
+- [ ] M1: Configure actual build, test, format/lint/typecheck and dependency scans as modules appear; publish redacted results / Compilar y probar código existente.
+- [ ] M2: Add contract/integration/Testcontainers, idempotency/concurrency and MFE end-to-end tests / Pruebas de contrato e integración.
+- [ ] M3: Build OCI images and MFE static artifacts by immutable commit/digest; prove local deployment and rollback / Artefactos inmutables.
+- [ ] M3: Optional AWS lab deploy only with OIDC, approval, cost estimate, TTL, teardown and monitoring / AWS sujeto a presupuesto y permiso.
+- [ ] M5: Approved production-like promotions, smoke tests, forward-only migration planning, rollback and audit / Promoción protegida.
+
+[FW-023 issue](https://github.com/devzaratech/fiscal-wave/issues/8) · [CI/CD specification](CICD.md) · [ADR-0007](../adr/0007-cicd-delivery.md)
+
 ## First vertical increment / Primer incremento (M1)
 - [ ] Scaffold Maven Java service `fiscal-document` plus `tenant` API with health endpoints / Crear dos APIs Java.
 - [ ] Define OpenAPI contract, fake issuer/recipient and negative authorization test / Contrato y pruebas.

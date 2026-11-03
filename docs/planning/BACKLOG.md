@@ -25,8 +25,8 @@
 | FW-019 | P0 | Interview practice / Práctica técnica | Original Java/SQL/React/system design drills, timed self-evaluation, evidence logs | TODO |
 | FW-020 | P0 | Portfolio proof / Evidencia laboral | Short EN/ES architecture walkthrough + reproducible installation + honest status | TODO |
 | [FW-021](https://github.com/devzaratech/fiscal-wave/issues/6) | P1 local / P2 optional anchoring | Verifiable audit / Auditoría criptográfica verificable | SHA-256 digest, event hash chain and tamper tests (M5); optional Merkle root, signed checkpoint or blockchain anchoring PoC (M7), with privacy/cost approval. Not required for DTE issuance / No requerido para DTE | TODO |
-
 | [FW-022](https://github.com/devzaratech/fiscal-wave/issues/7) | P0 | Engineering standards / Estándares de ingeniería | EN/ES SOLID + Clean Code + justified patterns, idempotency contract, agent/DoD standards, progressive quality gates and reproducible tests (M1 baseline, M2 idempotency verification) / Calidad y pruebas documentadas | TODO |
+| [FW-023](https://github.com/devzaratech/fiscal-wave/issues/8) | P0 M1 / P1 later | CI/CD per component / Integración y entrega continua | Always-run required PR gate; selective Maven/React checks; security + contract tests; digest-tagged artifacts; environment approvals, OIDC, rollback and zero unapproved AWS costs / Entrega gradual con pruebas y costos autorizados | TODO |
 
 ## Next executable sprint candidate / Próximo sprint sugerido
 **Goal:** reviewed repository foundation + runnable local invoice draft vertical slice (not six empty apps). Candidate scope: FW-001, FW-002 and a minimum vertical subset of FW-003/004/005. Re-scope after refinement. / Objetivo: base revisada y flujo local de borrador, sin seis apps vacías.

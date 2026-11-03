@@ -27,5 +27,8 @@ All code agents MUST follow [EN engineering standards](docs/en/engineering-stand
 ## Agent roles / Roles de agentes
 Role prompts are in [agents/README.md](agents/README.md): product/compliance, architect, backend, frontend, quality/interviews and cloud/security. **No role may override these root constraints.**
 
+## CI/CD delivery safety / Seguridad de la entrega
+Read [FW-023 CI/CD guide](docs/planning/CICD.md) and [ADR-0007](docs/adr/0007-cicd-delivery.md) before changing workflow files. Keep one always-run required status, conditional per-component checks, pinned reviewed Actions dependencies, least-privilege GITHUB_TOKEN and no untrusted PR access to deployment credentials. Never add AWS deploy, long-lived keys, infrastructure apply or automatically merge without owner approval. / Verificar gates, permisos, OIDC, costos y despliegues autorizados.
+
 ## High-risk actions requiring explicit approval / Acciones con autorización explícita
 AWS/Azure real resources or `terraform apply`; live SII submissions, taxpayer CAF/certificates, payments or financial transfers; changing IAM/secret permissions; data migrations/destruction; production release; merging PRs; modifying other repos.

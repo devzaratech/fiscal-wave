@@ -6,9 +6,9 @@
 | Gate | Goal | Evidence required |
 |---|---|---|
 | M0 - Foundation | Bilingual repo, architecture maps, scope, agent guardrails, Scrum backlog | Docs merged; review checklists; no unsupported status claims |
-| M1 - Runnable distributed skeleton + quality baseline | Two Java services + shell/invoices MFE, local Docker, Postgres; FW-022 design standards | CI builds, smoke/contracts, selected formatter/linter/architecture tests with real evidence; demo |
+| M1 - Runnable distributed skeleton + quality CI | Two Java services + shell/invoices MFE, local Docker, Postgres, FW-022/FW-023 | Always-run PR gate, selective Java/React builds and verified tests, no AWS deployment, demo |
 | M2 - Offline fiscal domain | Synthetic DTE 33/34, signed artifacts, folio and idempotent command processing | Request replay/conflict + event dedupe/concurrency tests; verified SII XML/XSD sources |
-| M3 - AWS competence lab | Cost-approved, temporary IAM/S3/Lambda/SQS and ECS/ALB routing demo | IaC plan, budget, logs, failover evidence, terraform destroy and cost review |
+| M3 - AWS competence and delivery lab | Cost-approved, temporary IAM/S3/Lambda/SQS and ECS/ALB + FW-023 release rehearsal | Protected OIDC deploy, smoke/failover, rollback, destroy and cost evidence |
 | M4 - Official Chile integration | SII testing and certification workflow by properly authorized issuer | Official test artifacts/receipts, traceable evidence; never claim certification prematurely |
 | M5 - Customer-ready pilot + audit integrity | Security, tenant isolation, restore tests, SHA-256 event chain and tamper detection | Synthetic verification tests, authorized pilot and an operational runbook |
 | M6 - Expansion | Additional jurisdiction or billing/payments only after discovery | New ADR, research, jurisdiction-specific validation |

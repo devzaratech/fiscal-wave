@@ -23,7 +23,7 @@ FiscalWave aspira a ser una plataforma fiscal **API-first, bilingüe y portable 
 
 ## Guías
 - [Visión](docs/es/vision.md) · [Arquitectura](docs/es/architecture.md) · [Hoja de ruta](docs/es/roadmap.md)
-- [Backlog y Scrum](docs/planning/README.md) · [Práctica de entrevistas](docs/planning/INTERVIEWS.md)
+- [Backlog y Scrum](docs/planning/README.md) · [CI/CD](docs/planning/CICD.md) · [Práctica de entrevistas](docs/planning/INTERVIEWS.md)
 - [FinOps](docs/planning/FINOPS.md) · [Cumplimiento SII](docs/planning/COMPLIANCE.md)
 - [Localización](docs/planning/I18N.md) · [Instrucciones para agentes](AGENTS.md)
 - [SOLID y estándares](docs/es/engineering-standards.md) · [Patrones de diseño](docs/architecture/pattern-catalog.md) · [Contrato de idempotencia](docs/architecture/idempotency-contract.md)

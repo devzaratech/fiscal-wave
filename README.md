@@ -35,6 +35,7 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 | Regulatory readiness | [Compliance / Cumplimiento](docs/planning/COMPLIANCE.md) | [Compliance / Cumplimiento](docs/planning/COMPLIANCE.md) |
 | Localisation | [i18n / Localización](docs/planning/I18N.md) | [i18n / Localización](docs/planning/I18N.md) |
 | Agent instructions | [AGENTS.md](AGENTS.md) | [AGENTS.md](AGENTS.md) |
+| CI/CD design | [Delivery pipeline](docs/planning/CICD.md) | [Entrega continua](docs/planning/CICD.md) |
 
 ## Architecture maps (PlantUML)
 - [System map](docs/architecture/system-map.puml)
