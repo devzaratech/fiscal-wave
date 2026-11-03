@@ -30,6 +30,17 @@ class DiagramConversionTest(unittest.TestCase):
                 self.assertIn("skinparam backgroundColor #FFFFFF", text)
                 self.assertIn("skinparam defaultFontColor #111111", text)
 
+    def test_generated_svg_has_solid_white_canvas(self):
+        for source in sorted(SOURCE.glob("*.puml")):
+            with self.subTest(source=source.name):
+                svg_file = SOURCE / "rendered" / f"{source.stem}.svg"
+                self.assertTrue(svg_file.is_file(), f"Missing {svg_file}")
+                svg = svg_file.read_text(encoding="utf-8")
+                self.assertRegex(
+                    svg,
+                    r'<svg\\b[^>]*><rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF"/>',
+                )
+
     def test_unknown_syntax_fails_closed(self):
         with tempfile.TemporaryDirectory() as temp:
             source = Path(temp) / "unknown.puml"
