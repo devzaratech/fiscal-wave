@@ -28,6 +28,9 @@ DECL = re.compile(
 EDGE = re.compile(r'^(\w+)\s+(-->|->|\.\.)\s+(\w+)(?:\s*:\s*(.*))?$')
 NOTE = re.compile(r'^note\s+(bottom|right|left|top|over)(?:\s+of\s+(\w+)|\s+(\w+))?$')
 IGNORED = ("skinparam ", "title ")
+# Mermaid theming must be explicit: GitHub dark mode otherwise blends diagrams
+# with its dark canvas even when PlantUML exports have an opaque white SVG.
+MERMAID_LIGHT = '%%{init: {"theme":"base","themeVariables":{"background":"#FFFFFF","darkMode":false,"primaryColor":"#FFFFFF","primaryTextColor":"#111111","primaryBorderColor":"#334155","secondaryColor":"#F1F5F9","tertiaryColor":"#FFFFFF","lineColor":"#475569","textColor":"#111111","actorBkg":"#FFFFFF","actorTextColor":"#111111"},"themeCSS":"svg { background-color: #FFFFFF !important; }"}}%%'
 
 class DiagramError(ValueError):
     pass
@@ -35,6 +38,11 @@ class DiagramError(ValueError):
 def clean(text: str) -> str:
     return (text.replace("\\n", "<br/>").replace('"', "&quot;")
             .replace("|", "&#124;").replace("[", "&#91;").replace("]", "&#93;"))
+
+def sequence_text(text: str) -> str:
+    # Mermaid sequence grammar treats semicolons as statement separators.
+    # Escape *before* adding HTML entity references in clean().
+    return clean(text.replace(";", "#59;"))
 
 def source_lines(path: Path) -> list[tuple[int, str]]:
     lines = [line.strip() for line in path.read_text(encoding="utf-8").splitlines()]
@@ -46,6 +54,7 @@ def convert(path: Path) -> str:
     lines = source_lines(path)
     is_sequence = any(line.startswith("participant ") or line == "autonumber" for _, line in lines)
     output = [f"%% Generated from {path.name}; edit the PlantUML source, not this file.",
+              MERMAID_LIGHT,
               "sequenceDiagram" if is_sequence else ("flowchart LR" if any(line == "left to right direction" for _, line in lines) else "flowchart TD")]
     group_stack: list[str] = []
     i = note_count = group_count = 0
@@ -105,7 +114,7 @@ def convert(path: Path) -> str:
                 if not target:
                     raise DiagramError(f"{path.name}:{line_number}: unanchored sequence note")
                 location = "over" if side == "over" else "left of" if side == "left" else "right of"
-                output.append(f"    Note {location} {target}: {message}")
+                output.append(f"    Note {location} {target}: {sequence_text(' '.join(note_lines))}")
             else:
                 note_count += 1
                 note_id = f"note_{note_count}"
@@ -114,7 +123,11 @@ def convert(path: Path) -> str:
                     output.append(f"    {target} -.-> {note_id}")
             continue
         if is_sequence and (line.startswith("alt ") or line.startswith("else ") or line == "end"):
-            output.append("    " + line)
+            if line != "end":
+                keyword, caption = line.split(" ", 1)
+                output.append(f"    {keyword} {sequence_text(caption)}")
+            else:
+                output.append("    end")
             continue
         edge = EDGE.fullmatch(line)
         if edge:
@@ -122,7 +135,7 @@ def convert(path: Path) -> str:
             if is_sequence:
                 if arrow == "..":
                     raise DiagramError(f"{path.name}:{line_number}: dotted sequence edge unsupported")
-                output.append(f"    {start}{'-->>' if arrow == '-->' else '->>'}{end}: {clean(label or '')}")
+                output.append(f"    {start}{'-->>' if arrow == '-->' else '->>'}{end}: {sequence_text(label or '')}")
             else:
                 arrow = "-.-" if arrow == ".." else "-->"
                 output.append(f"    {start} {arrow}{'|' + clean(label) + '|' if label else ''} {end}")
