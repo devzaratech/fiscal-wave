@@ -156,7 +156,9 @@ def gallery(diagrams: dict[str, str]) -> str:
         "CI validates both rendered SVG and deterministic Mermaid output.", "",
         "Conversion is strict and limited to the PlantUML constructs in this repository. "
         "Unsupported syntax fails CI rather than producing an incomplete diagram. "
-        "Mermaid may use simplified shapes/layout, and visual equivalence still requires human review.", "",
+        "Mermaid may use simplified shapes/layout, and visual equivalence still requires human review. "
+        "Native previews request an explicit light palette and white background; GitHub still controls its embedded viewer. "
+        "CI renders every Mermaid in Chromium to catch parser and render errors.", "",
     ]
     for stem, mermaid in diagrams.items():
         title = LABELS.get(stem, stem)
