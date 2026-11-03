@@ -1,19 +1,21 @@
 # Immediate TODOs / Pendientes inmediatos
 
-Every box is **unchecked by default** and must be backed by evidence before it can be ticked. / Ninguna tarea se considera hecha sin evidencia. These are proposed next actions, not completed work.
+Tasks begin **unchecked** and are checked only with linked evidence. Completed M0 tasks are marked below; other activities remain pending. / Las tareas comienzan pendientes y solo se marcan completadas con evidencia. M0 está cerrado; las demás siguen pendientes.
 
-## Foundation / Fundamentos (M0)
-- [x] Review and merge bilingual foundation PR #1 / Revisar y fusionar PR documental. [Merged](https://github.com/devzaratech/fiscal-wave/pull/1).
-- [ ] Confirm brand, MVP boundaries and Apache-2.0/open-core strategy before publishing / Confirmar marca, alcance y licencias.
-- [x] Validate architecture PlantUML with actual renderer / Validar diagramas reales. [CI evidence](https://github.com/devzaratech/fiscal-wave/actions/runs/41601171335).
-- [ ] Enable GitHub branch protection when private-repository plan allows it; meanwhile use human PR reviews, CI and no direct main edits / Proteger main cuando sea posible (actualmente no está protegida).
+## M0 foundation completed / Fundamentos M0 completados
+- [x] Review, approve and merge [foundation PR #1](https://github.com/devzaratech/fiscal-wave/pull/1); verify merge SHA [2548b614](https://github.com/devzaratech/fiscal-wave/commit/2548b61465c8a39790ed3cffecf910bc623b6078) / Revisión, aprobación e integración.
+- [x] Validate all six architecture PlantUML diagrams with real rendering / Diagramas validados. [CI evidence](https://github.com/devzaratech/fiscal-wave/actions/runs/41601171335).
+- [x] Review the M0 source, scope and legal/security disclaimers; keep unimplemented features as TODO / Alcance documental revisado. [Release review](M0-REVIEW.md).
 
-## Complete M0 and start code / Cerrar M0 e iniciar M1
-- [x] Review [PR #1](https://github.com/devzaratech/fiscal-wave/pull/1), scope, quality/legal claims and merge under conditional human authorization / Revisión y merge autorizado.
-- [x] Verify PlantUML diagrams with real rendering / Renderizar diagramas. [CI](https://github.com/devzaratech/fiscal-wave/actions/runs/41601171335).
+## Next work / Siguiente trabajo M1
 - [ ] Adopt [FW-032 AI selection](AI-AGENT-STRATEGY.md) and choose **one** active coding agent using evidence, cost and safety; preserve task handoff / Un solo escritor.
 - [ ] Approve [M1 stack](STACK-BASELINE.md) and pin actual versions when Maven and npm manifests are created / Versiones reales.
 - [ ] Execute [FW-002 first small PR](M1-KICKOFF.md) only after an approved foundation base; Java 21 tenant health/test/CI; no AWS/SII/real PII / Empezar con código funcional.
+
+## Before public release / Antes de publicar o abrir el proyecto
+- [ ] Confirm brand, initial MVP boundaries and future Apache-2.0/open-core strategy; **the existing Apache-2.0 LICENSE has not changed** / Confirmar marca, alcance y futura licencia comercial.
+- [ ] Enable GitHub branch protection for this private repo if/when plan supports it. Until then require human PR review, CI and no direct main edits / Proteger main cuando sea posible (no protegida hoy).
+
 - [ ] Main branch protection when GitHub private-repository plan supports it; never claim it is enforced while disabled / Proteger main cuando sea posible.
 
 ## Agent coordination, Chile privacy and country boundaries / Agentes, privacidad y países (FW-029–031)
