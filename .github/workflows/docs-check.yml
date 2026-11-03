@@ -3,31 +3,45 @@ on:
   pull_request:
   push:
     branches: [main]
-    paths:
-      - '**/*.md'
-      - '**/*.puml'
-      - 'scripts/check_docs.py'
+permissions:
+  contents: read
+
 jobs:
   validate-docs:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - name: Check mandatory docs, links and diagram markers
+        with:
+          persist-credentials: false
+      - name: Check mandatory docs and local links
         run: python3 scripts/check_docs.py
-      - name: Install PlantUML for real diagram validation
+      - name: Test PlantUML and SVG documentation checks
+        run: python3 -m unittest discover -s scripts/tests -v
+      - name: Verify generated SVG gallery
+        run: python3 scripts/diagrams.py --check
+      - name: Install PlantUML and Graphviz
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq plantuml
-      - name: Check PlantUML syntax and render SVG
+          sudo apt-get install -y -qq plantuml graphviz
+      - name: Validate and regenerate PlantUML SVGs
+        run: bash scripts/render-diagrams.sh
+      - name: Reject missing, extra or stale diagram assets
+        shell: bash
         run: |
-          plantuml -version
-          for diagram in docs/architecture/*.puml; do
-            echo "Checking: $diagram"
-            plantuml -checkonly "$diagram"
-          done
-          mkdir -p "$RUNNER_TEMP/fiscalwave-diagrams"
-          plantuml -tsvg -o "$RUNNER_TEMP/fiscalwave-diagrams" docs/architecture/*.puml
-          test "$(find "$RUNNER_TEMP/fiscalwave-diagrams" -type f -name '*.svg' | wc -l)" -ge 6
-
+          set -euo pipefail
+          shopt -s nullglob
+          sources=(docs/architecture/*.puml)
+          svgs=(docs/architecture/rendered/*.svg)
+          test "${#sources[@]}" -eq "${#svgs[@]}"
+          if find docs/architecture -name '*.mmd' -type f | grep -q .; then
+            echo 'Unexpected Mermaid source: PlantUML is canonical' >&2
+            exit 1
+          fi
+          git diff --exit-code -- docs/architecture/rendered docs/architecture/diagrams.md
+          unexpected="$(git ls-files --others --exclude-standard docs/architecture/rendered docs/architecture/diagrams.md)"
+          test -z "$unexpected" || { printf 'Untracked generated asset(s):\n%s\n' "$unexpected"; exit 1; }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fiscalwave-architecture-svg
+          path: docs/architecture/rendered/*.svg
+          retention-days: 7

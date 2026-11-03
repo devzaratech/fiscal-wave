@@ -1,4 +1,6 @@
 @startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontColor #111111
 title FiscalWave — Idempotent issuance / Emisión idempotente (proposed)
 skinparam shadowing false
 actor Client

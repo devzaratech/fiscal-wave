@@ -1,4 +1,6 @@
 @startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontColor #111111
 title FiscalWave - temporary AWS learning lab (NOT production)
 skinparam shadowing false
 node "Developer PC / local CI" as Dev
