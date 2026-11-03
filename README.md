@@ -52,7 +52,7 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 
 ![FiscalWave proposed system map](docs/architecture/rendered/system-map.svg)
 
-Generate locally with `bash scripts/render-diagrams.sh` (requires PlantUML and Graphviz). GitHub Actions checks the generated files against the PlantUML sources. **These are proposed designs, not deployed systems.**
+Generate locally with `bash scripts/render-diagrams.sh` (requires PlantUML and Graphviz). The exported SVGs include an opaque white canvas and dark labels for contrast in GitHub dark mode; Mermaid previews follow GitHub's renderer theme. GitHub Actions checks the generated files against the PlantUML sources. **These are proposed designs, not deployed systems.**
 
 ## Contributing and transparency
 See [CONTRIBUTING](CONTRIBUTING.md), [AGENTS](AGENTS.md) and the [Definition of Done](docs/planning/QUALITY.md). No secret, real taxpayer certificate/CAF, RUT dataset, customer invoice or AWS credential belongs in Git.
