@@ -23,6 +23,7 @@ FiscalWave aspira a ser una plataforma fiscal **API-first, bilingüe y portable 
 
 ## Guías
 - [Visión](docs/es/vision.md) · [Arquitectura](docs/es/architecture.md) · [Hoja de ruta](docs/es/roadmap.md)
+- [Selección secuencial de IA](docs/planning/AI-AGENT-STRATEGY.md) · [Stack objetivo](docs/planning/STACK-BASELINE.md) · [Primer desarrollo FW-002](docs/planning/M1-KICKOFF.md)
 - [Coordinación de agentes y worktrees](docs/planning/MULTI_AGENT.md) · [Protección de datos personales de Chile](docs/privacy/README.md) · [Repositorios por país](docs/adr/0010-country-repository-strategy.md)
 - [Backlog y Scrum](docs/planning/README.md) · [CI/CD](docs/planning/CICD.md) · [Práctica de entrevistas](docs/planning/INTERVIEWS.md)
 - [FinOps](docs/planning/FINOPS.md) · [Cumplimiento SII](docs/planning/COMPLIANCE.md)

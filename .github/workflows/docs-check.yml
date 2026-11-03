@@ -1,11 +1,6 @@
 name: Documentation checks
 on:
   pull_request:
-    paths:
-      - '**/*.md'
-      - '**/*.puml'
-      - 'scripts/check_docs.py'
-      - '.github/workflows/docs-check.yml'
   push:
     branches: [main]
     paths:

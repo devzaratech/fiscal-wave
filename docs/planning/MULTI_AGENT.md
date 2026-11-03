@@ -2,6 +2,9 @@
 
 **Status / Estado: policy and local checks implemented in this documentation branch; NOT a global GitHub lock.** [Issue FW-029](https://github.com/devzaratech/fiscal-wave/issues/14).
 
+## Current execution model / Modo vigente
+**Sequential, NOT parallel writers / Secuencial, no escritores simultáneos.** [FW-032](AI-AGENT-STRATEGY.md) supersedes any suggestion in this document that more than one writer should work at once. Separate worktrees still protect history, enable migration and allow a read-only reviewer. Cross-PR checks remain defense in depth, not a reason to enable simultaneous writes. / Un agente escritor a la vez.
+
 ## Source of truth / Fuente única
 - `AGENTS.md` is canonical for **Codex, OpenCode and Claude Code**. `CLAUDE.md` imports it; OpenCode reads root `AGENTS.md`. Tool-specific reviewer profiles are **short wrappers**, not competing policies. / Las reglas no deben divergir.
 - Read the current `AGENTS.md`, relevant role in `agents/`, FW issue, acceptance criteria, ADR, privacy/SII requirements, and the latest base SHA before coding. / Validar SHA y alcance.

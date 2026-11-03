@@ -2,6 +2,9 @@
 
 Applies to Codex, Copilot and any code assistants. **Instructions are guidance; role documents do not launch autonomous agents.**
 
+## Sequential AI agent policy / Política de IA secuencial (FW-032)
+**Only ONE write-capable coding agent may be active for FiscalWave at any moment.** Choose Codex, Claude Code, OpenCode, Antigravity or another tool **per FW issue**, based on verified tests, compatibility, security, cost and capability; never designate a tool as best without evidence. Independent read-only review is allowed after writing stops. Each switch requires an accurate Git handoff with base/latest commit SHA, branch, task manifest, changed paths, executed tests, failures and next step. See [selection method](docs/planning/AI-AGENT-STRATEGY.md) and [M1 kickoff](docs/planning/M1-KICKOFF.md). No simultaneous writer sessions or use of private agent conversation memory as project source of truth. / Un solo agente escritor activo, con traspaso verificable.
+
 ## Mandatory / Obligatorio
 1. **Never touch BSK or other repositories** unless the owner explicitly requests it. / **Nunca modificar BSK ni otros repositorios** sin autorización.
 2. Prefer a feature branch + reviewed PR; do not merge into main, deploy to cloud, create billable resources, change licenses or publish data without explicit owner approval. / Usar rama y PR; sin despliegues, costos, cambios de licencia ni publicaciones sin autorización.

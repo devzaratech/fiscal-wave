@@ -8,6 +8,14 @@ Every box is **unchecked by default** and must be backed by evidence before it c
 - [ ] Validate architecture PlantUML with an actual renderer (marker checks alone are insufficient) / Validar los diagramas con PlantUML real.
 - [ ] Set GitHub branch protections, review flow and issues/milestones as desired / Configurar protección de rama y tablero.
 
+## Complete M0 and start code / Cerrar M0 e iniciar M1
+- [ ] Owner reviews the full draft [PR #1](https://github.com/devzaratech/fiscal-wave/pull/1) for scope, quality and legal claims; merge requires **explicit owner approval** / Revisión humana y aprobación.
+- [ ] Verify PlantUML diagrams with a real renderer (doc markers alone insufficient) / Renderizar diagramas.
+- [ ] Adopt [FW-032 AI selection](AI-AGENT-STRATEGY.md) and choose **one** active coding agent using evidence, cost and safety; preserve task handoff / Un solo escritor.
+- [ ] Approve [M1 stack](STACK-BASELINE.md) and pin actual versions when Maven and npm manifests are created / Versiones reales.
+- [ ] Execute [FW-002 first small PR](M1-KICKOFF.md) only after an approved foundation base; Java 21 tenant health/test/CI; no AWS/SII/real PII / Empezar con código funcional.
+- [ ] Main branch protection when GitHub private-repository plan supports it; never claim it is enforced while disabled / Proteger main cuando sea posible.
+
 ## Agent coordination, Chile privacy and country boundaries / Agentes, privacidad y países (FW-029–031)
 - [ ] Review and merge [multi-agent protocol](MULTI_AGENT.md), verify Claude/OpenCode/Codex instructions are loaded and use separate worktrees / Verificar instrucciones y worktrees.
 - [ ] Declare branch/base SHA/allowed paths per task; review other open PRs for collisions; forbid overwrites and auto-merges / Contratos y revisión humana.

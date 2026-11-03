@@ -35,6 +35,8 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 | Regulatory readiness | [Compliance / Cumplimiento](docs/planning/COMPLIANCE.md) | [Compliance / Cumplimiento](docs/planning/COMPLIANCE.md) |
 | Localisation | [i18n / Localización](docs/planning/I18N.md) | [i18n / Localización](docs/planning/I18N.md) |
 | Agent instructions | [AGENTS.md](AGENTS.md) | [AGENTS.md](AGENTS.md) |
+| Sequential AI agent selection | [FW-032 policy](docs/planning/AI-AGENT-STRATEGY.md) | [Selección y traspaso de IA](docs/planning/AI-AGENT-STRATEGY.md) |
+| Initial stack and M1 kickoff | [Stack](docs/planning/STACK-BASELINE.md) · [FW-002 kickoff](docs/planning/M1-KICKOFF.md) | [Stack](docs/planning/STACK-BASELINE.md) · [Inicio FW-002](docs/planning/M1-KICKOFF.md) |
 | Multi-agent development | [Worktree & PR ownership](docs/planning/MULTI_AGENT.md) | [Coordinación multiagente](docs/planning/MULTI_AGENT.md) |
 | Chile Law 21.719 | [Privacy readiness](docs/privacy/README.md) | [Programa de privacidad](docs/privacy/README.md) |
 | Country repo architecture | [ADR-0010](docs/adr/0010-country-repository-strategy.md) | [ADR-0010](docs/adr/0010-country-repository-strategy.md) |

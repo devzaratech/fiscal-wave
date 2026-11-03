@@ -11,6 +11,9 @@ Agent documents are **role instructions**, not runnable autonomous processes. Th
 | [QA & interview coach](qa-interview.md) | Original drills, verification, test design / Ejercicios y pruebas |
 | [Cloud & security](cloud-security.md) | IAM, cost approval, IaC, observability / AWS, FinOps y seguridad |
 
+## Sequential execution / Ejecución secuencial (FW-032)
+Default: one selected tool performs one scoped task; a different tool may review afterwards **read-only**, not concurrently as another writer. The owner selects by issue using [evidence and risk rubric](../docs/planning/AI-AGENT-STRATEGY.md) and saves [handoff](../coordination/examples/AGENT-HANDOFF.example.md). Roles are instructions, not independently active writers. / Selección por historia y traspaso real.
+
 ## Agent isolation / Aislamiento de agentes
 The roles in this directory are **instructions**, not automatically running cross-tool agents. See [FW-029](../docs/planning/MULTI_AGENT.md) for branch/worktree/ownership rules. Claude Code loads [CLAUDE.md](../CLAUDE.md) which imports root AGENTS.md; OpenCode has a read-only [reviewer](../.opencode/agents/fiscalwave-reviewer.md) and Claude an independent [reviewer](../.claude/agents/fiscalwave-reviewer.md). Codex reads root AGENTS.md. Do not run several write agents on the same directory/branch. / No editar en paralelo los mismos archivos.
 All agents must read [Chile privacy program](../docs/privacy/README.md) before handling personal data, and [country ADR](../docs/adr/0010-country-repository-strategy.md) before proposing other jurisdictions.

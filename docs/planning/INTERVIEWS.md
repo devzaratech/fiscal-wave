@@ -41,6 +41,12 @@ Exercises with original prompts and a synthetic SQL fixture: [practice kit](../.
 - Practice identifying fragile controller/domain coupling and test behavior with JUnit and integration fixtures / Detectar acoplamiento y probar.
 See [EN engineering standards](../en/engineering-standards.md) · [ES estándares](../es/engineering-standards.md).
 
+## AI engineering interview / Entrevista de uso responsable de IA
+- Explain in EN/ES why one agent was selected for an FW issue: quality, reproducible tests, context, security, cost; compare to an unchosen alternative without unsupported claims.
+- Explain what was and was **not** delegated, how the Git branch/worktree and task ownership protected human decisions, and what the next agent receives at handoff.
+- Show an actual PR review, test log, caught defect and correction **only when there is evidence**; never call documentation-only CI a Java/React build.
+- Explain why no real Chilean taxpayer PII, PFX, CAF or live DTE was sent to an LLM; link [FW-032](AI-AGENT-STRATEGY.md) and [privacy program](../privacy/CHILE-21719.md). / Sin datos reales en prompts.
+
 ## Mock evaluation rubric / Rúbrica
 Score each dimension 0–2: (1) correct output, (2) tests/edge cases, (3) time/space complexity, (4) clarity and communication, (5) code readability. Maximum 10; improvement matters more than one score. / Puntuar corrección, pruebas, complejidad, claridad y legibilidad.
 

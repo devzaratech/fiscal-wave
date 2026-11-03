@@ -17,6 +17,9 @@
 | Idempotency / Idempotencia | [Idempotency contract / Contrato](../architecture/idempotency-contract.md) |
 | Interview preparation / Entrevistas | [INTERVIEWS.md](INTERVIEWS.md) |
 | Cloud cost safety / FinOps | [FINOPS.md](FINOPS.md) |
+| Agent selection & handoff / Selección de IA | [AI-AGENT-STRATEGY.md](AI-AGENT-STRATEGY.md) |
+| M1 technology baseline / Stack M1 | [STACK-BASELINE.md](STACK-BASELINE.md) |
+| Start FW-002 / Primer desarrollo | [M1-KICKOFF.md](M1-KICKOFF.md) |
 | Agent coordination / Coordinación IA | [MULTI_AGENT.md](MULTI_AGENT.md) |
 | Chile Law 21.719 privacy / Datos personales | [Privacy program / Privacidad](../privacy/README.md) |
 | Country-repository decision / Decisión por país | [ADR-0010](../adr/0010-country-repository-strategy.md) |

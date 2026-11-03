@@ -38,6 +38,8 @@
 | [FW-030](https://github.com/devzaratech/fiscal-wave/issues/15) | P0 | Chile Law 21.719 privacy readiness / Privacidad | Controller/processor inventory, lawful basis, rights, retention exceptions, EIPD risk screen, breach response and transfer review / Derechos y seguridad | IN_PROGRESS |
 | [FW-031](https://github.com/devzaratech/fiscal-wave/issues/16) | P0 architecture / P2 split | Country repository decision / Repositorios por país | ADR monorepo per-jurisdiction now, criteria for splitting later; data/IAM isolation independent of Git / ADR y límites reales | IN_PROGRESS |
 
+| [FW-032](https://github.com/devzaratech/fiscal-wave/issues/17) | P0 M0 | Sequential AI-assisted engineering / Selección de IA y traspaso | One writer; selection by verified outcomes and cost/privacy, versioned handoff and quality evidence, no provider lock-in / Gobernanza y continuidad | IN_PROGRESS |
+
 ## Next executable sprint candidate / Próximo sprint sugerido
 **Goal:** reviewed repository foundation + runnable local invoice draft vertical slice (not six empty apps). Candidate scope: FW-001, FW-002 and a minimum vertical subset of FW-003/004/005. Re-scope after refinement. / Objetivo: base revisada y flujo local de borrador, sin seis apps vacías.
 
