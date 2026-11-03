@@ -24,6 +24,18 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Refresh current feature-branch head
+        shell: bash
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$TARGET_BRANCH" || "$TARGET_BRANCH" == "main" ]]; then
+            echo 'Refusing unsafe branch name' >&2
+            exit 1
+          fi
+          git fetch --no-tags origin "refs/heads/$TARGET_BRANCH"
+          git checkout -B "$TARGET_BRANCH" FETCH_HEAD
       - name: Install PlantUML and Graphviz
         run: |
           sudo apt-get update -qq
