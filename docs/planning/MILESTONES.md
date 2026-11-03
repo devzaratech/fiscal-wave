@@ -1,10 +1,10 @@
 # Milestones and outcome gates / Hitos y metas
 
-All milestones are **proposed, not complete** / Todos los hitos están **propuestos, no completados**. No fixed due dates / Sin fechas obligatorias.
+M0 is **completed as a reviewed documentation and governance foundation**; M1–M7 remain proposed. / M0 completado como base documental; M1–M7 siguen pendientes. No fixed due dates / Sin fechas obligatorias.
 
 | ID | Outcome (EN) / Resultado (ES) | Acceptance evidence / Evidencia de aceptación | Status |
 |---|---|---|---|
-| M0 | Reviewed bilingual foundation + sequential AI governance / Base revisada y selección de IA | Docs, FW-029/032 handoffs and one-writer selection, FW-031 jurisdiction ADR, privacy inventory, real PlantUML compilation, explicit owner review and merge / M0 requiere aprobación | IN_PROGRESS |
+| M0 | Reviewed bilingual foundation + sequential AI governance / Base revisada y selección de IA | [PR #1 merged](https://github.com/devzaratech/fiscal-wave/pull/1) at [`2548b614`](https://github.com/devzaratech/fiscal-wave/commit/2548b61465c8a39790ed3cffecf910bc623b6078), docs/agent checks and actual PlantUML renders; [release review](M0-REVIEW.md) / Alcance documental auditado | DONE (documentation only) |
 | M1 | Local runnable distributed slice + quality CI / Flujo local y CI | Two APIs + shell/invoice MFE + Compose, FW-022 engineering rules and FW-023 Java/React PR build/test gate (no cloud), reproducible evidence / CI sin recursos AWS | TODO |
 | M2 | Validated signed XML and PDF / XML firmado y PDF verificables | DTE 33/34, synthetic PFX/CAF secret controls, official XSD, TED/XMLDSig, PDF417 print scan tests (FW-025–027), idempotency/folio/concurrency evidence / Validación offline sin certificación | TODO |
 | M3 | Cost-limited AWS CI/CD lab / Laboratorio AWS y despliegue controlado | IAM/S3/Lambda/SQS, temporary ECS/ALB, FW-023 manual approved deploy and rollback, Terraform destroy evidence and actual cost review / Aprobar costos y verificar destrucción | TODO |

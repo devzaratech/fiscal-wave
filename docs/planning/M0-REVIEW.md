@@ -35,9 +35,9 @@
 - [x] Review source and scope against M0, including safety and privacy claims / Alcance y riesgos revisados.
 - [x] Review license status without modifications / Licencia existente revisada.
 - [x] Identify prior diagram rendering CI evidence / Diagramas previos validados.
-- [ ] Both mandatory documentation + agent CI workflows green on **final** PR head / CI verde último SHA.
-- [ ] Owner authorizes review completion and PR merge / Propietario autoriza merge.
-- [ ] Verify `main` contains reviewed files and record merge SHA / Verificar integración.
+- [x] Both PR documentation + agent workflows green on final PR head: [docs](https://github.com/devzaratech/fiscal-wave/actions/runs/41601171335), [agent checks](https://github.com/devzaratech/fiscal-wave/actions/runs/41601171334) / CI verde.
+- [x] Owner conditionally authorized merge after satisfactory review in conversation; [PR #1 merged](https://github.com/devzaratech/fiscal-wave/pull/1) / Aprobación condicional verificada con integración.
+- [x] Verified `main` contains reviewed files; [merge commit 2548b61465c8a39790ed3cffecf910bc623b6078](https://github.com/devzaratech/fiscal-wave/commit/2548b61465c8a39790ed3cffecf910bc623b6078) / Integración comprobada.
 - [ ] Start FW-002 **only after** successful merge and fresh base SHA / Nuevo desarrollo posterior.
 
-**M0 completion rule:** marked complete only after all release checks pass and GitHub confirms a merge to `main`; document review is not a substitute for source control evidence. / No cerrar por mera documentación.
+**M0 closure / Cierre M0:** documentation and governance foundation merged and confirmed on `main`; this does **not** indicate functional services, validated actual local agent permissions, SII certification, operating Law 21.719 controls or paid deployment. The remaining unchecked FW-002 work is M1. / M0 documental cerrado, funcionalidades pendientes en hitos posteriores.
