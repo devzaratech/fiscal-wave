@@ -1,0 +1,37 @@
+%% Generated from sii-signing-and-pdf.puml; edit the PlantUML source, not this file.
+sequenceDiagram
+    autonumber
+    actor User as Authorized issuer / Emisor autorizado
+    participant MFE as Invoices MFE
+    participant Fiscal as Fiscal Document Service
+    participant DB as PostgreSQL<br/>folios and idempotency
+    participant PFX as Signer credential port<br/>PKCS#12 (.pfx/.p12)
+    participant CAF as CAF credential port<br/>RSASK private timbre key
+    participant XSD as Official XSD validator<br/>versioned offline bundle
+    participant PDF as PDF renderer<br/>PDF417
+    participant Store as Private object storage<br/>immutable signed XML + PDF
+    participant SII as SII Connector
+    User->>MFE: Issue synthetic DTE / Emitir DTE de prueba
+    MFE->>Fiscal: issue(idempotency key, issuer)
+    Fiscal->>DB: Unique issuer + type + folio; store intent
+    DB-->>Fiscal: Authorized range reserved
+    Fiscal->>Fiscal: Construct TED DD payload
+    Fiscal->>CAF: Authorize issuer/type/range; sign DD in isolated key port
+    CAF-->>Fiscal: FRMT signature + public CAF metadata
+    Fiscal->>Fiscal: Assemble TED (DD + FRMT)
+    Fiscal->>XSD: Validate document XML
+    XSD-->>Fiscal: Schema + business checks
+    Fiscal->>PFX: Sign whole XML with authorized signer
+    PFX-->>Fiscal: XMLDSig result
+    Fiscal->>XSD: Validate final signed document
+    XSD-->>Fiscal: Valid or error
+    Fiscal->>Store: Persist immutable signed XML
+    Fiscal->>PDF: Render stored signed XML including TED
+    PDF-->>Fiscal: PDF + scannable PDF417
+    Fiscal->>Store: Persist derived PDF
+    Fiscal->>DB: Audit metadata + outbox
+    Fiscal-->>MFE: Document ID and pending status
+    DB->>SII: Async outbox submission command (when authorized)
+    Note right of CAF: CAF private timbre key != PFX signer key Never store secrets in Redis/Mongo.
+    Note right of PDF: PDF is representation, XML is tax document; print sample tests pending.
+    Note over SII: No real submissions without authorized issuer and SII process.

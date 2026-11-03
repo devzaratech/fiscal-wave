@@ -1,0 +1,29 @@
+%% Generated from aws-lab.puml; edit the PlantUML source, not this file.
+flowchart TD
+    Dev["Developer PC / local CI"]
+    subgraph group_1["AWS account - sandbox only"]
+    Static["CloudFront + S3<br/>MFE static artifacts (optional lab)"]
+    ALB["Application Load Balancer<br/>Hourly/LCU charges"]
+    subgraph group_2["ECS / Fargate (short lived)"]
+    A["Fiscal API task A"]
+    B["Fiscal API task B"]
+    end
+    SQS["SQS / DLQ"]
+    Lambda["Lambda Java"]
+    S3["S3 private documents"]
+    RDS[("RDS (optional; costly)")]
+    Guard["IAM + budget alerts + tags<br/>Terraform destroy"]
+    end
+    Dev -->|browser| Static
+    Dev -->|test HTTPS| ALB
+    ALB -->|health checks + routes| A
+    ALB -->|health checks + routes| B
+    A -->|event| SQS
+    SQS -->|worker| Lambda
+    Lambda -->|IAM role only| S3
+    A -->|optional lab| RDS
+    B -->|optional lab| RDS
+    Guard -.- ALB
+    Guard -.- RDS
+    Guard -.- Lambda
+    note_1["Note: No always-on NAT Gateway, EKS or RDS in the initial lab. Budget alerts are not a guaranteed hard spending cap. All billable resources require owner approval and teardown."]
