@@ -5,13 +5,20 @@
 ## Official source of truth / Fuente oficial
 - [SII Chile](https://www.sii.cl/)
 - [SII facturación electrónica](https://www.sii.cl/factura_electronica/)
+- [SII XML/XSD catalogue](https://www.sii.cl/servicios_online/1039-formato_xml-1184.html)
+- [SII technical instructive 2021](https://www.sii.cl/factura_electronica/factura_mercado/instructivo_emision.pdf)
+- [SII certification stages](https://www.sii.cl/servicios_online/1039-proceso_certificacion-1184.html)
+- [DTE signing/PDF plan](SII-DTE-LIFECYCLE.md)
 
 ## Traceability matrix template / Matriz de trazabilidad
 | Requirement / Requisito | Source + version/date / Fuente y fecha | Owner / Dueño | Test / Prueba | Evidence / Evidencia |
 |---|---|---|---|---|
 | DTE 33/34 calculations / Cálculos | TODO official source | fiscal-document | synthetic tax cases | TODO |
 | CAF / folio uniqueness / Folios | TODO official source | fiscal-document | concurrent DB test | TODO |
-| XML signature + PDF417 / Firma y timbre | TODO official source | fiscal-document | schema + tamper test | TODO |
+| PKCS#12 signer/PFX / Firma del emisor | SII technical instructive 2021; reverify current | credential vault | expiry/tenant/signature tests | TODO |
+| CAF RSASK + TED / Llave timbre SII | SII technical instructive 2021; reverify current | fiscal-document | key separation/CAF/timbre tests | TODO |
+| Official XSD / Schemas SII | [SII XML index](https://www.sii.cl/servicios_online/1039-formato_xml-1184.html) checked 2026-11-03 | fiscal-document | versioned offline validation, XXE tests | TODO |
+| XMLDSig and PDF417 representation / Firma y timbre impreso | [SII certification](https://www.sii.cl/servicios_online/1039-proceso_certificacion-1184.html) checked 2026-11-03 | fiscal-document + PDF renderer | signature, print and barcode decode | TODO |
 | SII auth, submit and statuses / Envío | TODO official source | sii-connector | sandbox integration | TODO |
 | Exchange + acknowledgments / Intercambio | TODO official source | sii-connector | contract test | TODO |
 | Authorization/certification / Habilitación | TODO official SII procedure | owner + compliance | official process evidence | BLOCKED |

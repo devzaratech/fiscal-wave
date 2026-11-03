@@ -18,6 +18,9 @@
 | Interview preparation / Entrevistas | [INTERVIEWS.md](INTERVIEWS.md) |
 | Cloud cost safety / FinOps | [FINOPS.md](FINOPS.md) |
 | Regulatory evidence / Cumplimiento | [COMPLIANCE.md](COMPLIANCE.md) |
+| Redis, MongoDB / Persistencia | [DATA-PLATFORMS.md](DATA-PLATFORMS.md) |
+| PFX, CAF, XSD, PDF417 / Flujo fiscal | [SII-DTE-LIFECYCLE.md](SII-DTE-LIFECYCLE.md) |
+| LibreDTE/vendor matrix / Comparativa | [PROVIDER-CAPABILITIES.md](PROVIDER-CAPABILITIES.md) |
 | i18n / Localización | [I18N.md](I18N.md) |
 | Hiring skills / Competencias laborales | [EMPLOYABILITY.md](EMPLOYABILITY.md) |
 

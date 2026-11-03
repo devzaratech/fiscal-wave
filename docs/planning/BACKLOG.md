@@ -28,6 +28,12 @@
 | [FW-022](https://github.com/devzaratech/fiscal-wave/issues/7) | P0 | Engineering standards / Estándares de ingeniería | EN/ES SOLID + Clean Code + justified patterns, idempotency contract, agent/DoD standards, progressive quality gates and reproducible tests (M1 baseline, M2 idempotency verification) / Calidad y pruebas documentadas | TODO |
 | [FW-023](https://github.com/devzaratech/fiscal-wave/issues/8) | P0 M1 / P1 later | CI/CD per component / Integración y entrega continua | Always-run required PR gate; selective Maven/React checks; security + contract tests; digest-tagged artifacts; environment approvals, OIDC, rollback and zero unapproved AWS costs / Entrega gradual con pruebas y costos autorizados | TODO |
 
+| [FW-024](https://github.com/devzaratech/fiscal-wave/issues/9) | P1 Redis / P2 Mongo | Polyglot / Redis y MongoDB | PostgreSQL fiscal authority; Redis non-authoritative cache, Mongo optional projection vs JSONB / Datos opcionales | TODO |
+| [FW-025](https://github.com/devzaratech/fiscal-wave/issues/10) | P0 | PFX and CAF custody / Custodia de claves | Authorized PKCS#12 signer separate from CAF private timbre key; encryption, expiry, tenant ACL, audit / Bóveda y seguridad | TODO |
+| [FW-026](https://github.com/devzaratech/fiscal-wave/issues/11) | P0 | SII XML/XSD, XMLDSig and TED / Esquemas y timbre | Verified official versioned schemas and separate PFX vs CAF crypto; XXE and tamper tests / XSD oficiales y firmas | TODO |
+| [FW-027](https://github.com/devzaratech/fiscal-wave/issues/12) | P0 | XML-to-PDF/PDF417 / Representación gráfica | Derive printable PDF and machine-readable TED PDF417 from immutable signed XML / Pruebas de escaneo e impresión | TODO |
+| [FW-028](https://github.com/devzaratech/fiscal-wave/issues/13) | P1 | Provider feature map / Comparativa LibreDTE | Source-backed SII + LibreDTE + SimpleFactura benchmark, not assumed implementation / Prioridades por hito | TODO |
+
 ## Next executable sprint candidate / Próximo sprint sugerido
 **Goal:** reviewed repository foundation + runnable local invoice draft vertical slice (not six empty apps). Candidate scope: FW-001, FW-002 and a minimum vertical subset of FW-003/004/005. Re-scope after refinement. / Objetivo: base revisada y flujo local de borrador, sin seis apps vacías.
 

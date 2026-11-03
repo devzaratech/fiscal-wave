@@ -36,6 +36,18 @@ Every box is **unchecked by default** and must be backed by evidence before it c
 - [ ] Add Docker Compose and smoke test for draft create/read / Prueba local completa.
 - [ ] Add CI build/test for Java and TypeScript with no paid cloud resource / CI sin AWS.
 
+## Redis, MongoDB and Chilean fiscal documents / Datos y ciclo DTE (FW-024–028)
+- [ ] Evaluate optional Redis cache/rate limits; outages must not change folios or DTE status / Redis no autoritativo.
+- [ ] Compare Mongo read projection with PostgreSQL JSONB and test rebuild and isolation / Mongo opcional.
+- [ ] Design encrypted signer PFX/P12 vault, separate password, tenant permissions, expiration and rotation / Certificado firmante.
+- [ ] Independently protect CAF and its private RSASK timbre key; verify authorized issuer/type/range / CAF distinto del PFX.
+- [ ] Verify official SII XSD bundle, version and checksum; offline safe parser without XXE / Esquemas.
+- [ ] Sign TED with CAF key; sign whole DTE using authorized signer, test invalid XML, signature and key / Timbre y firma separados.
+- [ ] Render PDF/PDF417 from immutable signed XML with print and barcode-decoding tests / PDF.
+- [ ] Track LibreDTE and other providers' public capabilities with realistic milestone scope / Comparativa.
+
+[Data platforms](DATA-PLATFORMS.md) · [SII lifecycle](SII-DTE-LIFECYCLE.md) · [Provider matrix](PROVIDER-CAPABILITIES.md)
+
 ## Fiscal correctness / Correctitud fiscal (M2)
 - [ ] Verify current SII DTE 33/34, CAF, XML, signature and certification specifications with dated sources.
 - [ ] Implement unique folio and idempotency under concurrent load using synthetic fixtures.
