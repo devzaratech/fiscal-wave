@@ -29,7 +29,7 @@ Every box is **unchecked by default** and must be backed by evidence before it c
 - [ ] M7 optional: Design AuditAnchoringProvider with local stub; enable external provider only after approval / Adaptador opcional sin costos no autorizados.
 - [ ] Never publish DTE, RUT, PII, CAF or certificates on-chain; blockchain does not replace SII certification / Sin datos reales ni sustitución del SII.
 
-[FW-021 issue / Historia](https://github.com/devzaratech/fiscal-wave/issues/6)
+[FW-021 issue / Historia](https://github.com/devzaratech/fiscal-wave/issues/6) · [ADR-0005 / Decisión arquitectónica](../adr/0005-cryptographic-audit.md)
 
 ## Career skills / Competencias laborales (parallel / paralelo)
 - [ ] Complete original challenge EX-01 and record Big-O + edge cases.
