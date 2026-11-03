@@ -30,7 +30,7 @@ required = [
     "docs/planning/STACK-BASELINE.md",
     "docs/planning/M1-KICKOFF.md",
     "coordination/examples/AGENT-HANDOFF.example.md",
-"docs/planning/DATA-PLATFORMS.md",
+    "docs/planning/DATA-PLATFORMS.md",
     "docs/planning/SII-DTE-LIFECYCLE.md",
     "docs/planning/PROVIDER-CAPABILITIES.md",
     "docs/adr/0008-polyglot-persistence.md",
