@@ -5,7 +5,6 @@
 ## Official source of truth / Fuente oficial
 - [SII Chile](https://www.sii.cl/)
 - [SII facturación electrónica](https://www.sii.cl/factura_electronica/)
-- [SII DTE portal](https://www.sii.cl/servicios_online/1039-.html) — verify link and content before relying on it.
 
 ## Traceability matrix template / Matriz de trazabilidad
 | Requirement / Requisito | Source + version/date / Fuente y fecha | Owner / Dueño | Test / Prueba | Evidence / Evidencia |

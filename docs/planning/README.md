@@ -5,6 +5,9 @@
 | Artifact / Artefacto | Link |
 |---|---|
 | Product backlog / Backlog | [BACKLOG.md](BACKLOG.md) |
+| Immediate TODOs / Pendientes inmediatos | [TODO.md](TODO.md) |
+| Threat model / Modelo de amenazas | [THREAT_MODEL.md](THREAT_MODEL.md) |
+| Practice kit / Ejercicios | [../../practice/README.md](../../practice/README.md) |
 | Milestones / Hitos | [MILESTONES.md](MILESTONES.md) |
 | Scrum and Agile / Scrum y Agile | [SCRUM.md](SCRUM.md) |
 | Quality + DoD / Calidad + Definición de terminado | [QUALITY.md](QUALITY.md) |

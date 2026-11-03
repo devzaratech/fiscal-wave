@@ -7,8 +7,10 @@
 |---|---|---|
 | [HackerRank](https://www.hackerrank.com/skills-directory) | Coding, SQL/database, Spring Boot, front/back end, Linux, system design and cloud depending on assessment | Java DSA + SQL + API + explanation |
 | [LeetCode](https://support.leetcode.com/hc/en-us/articles/360013578114-How-to-use-Explore) | Topic-based data structures and algorithms practice | Pattern repetition + Big-O + edge cases |
-| [CoderPad (also called CodePad informally)](https://coderpad.io/resources/docs/for-candidates/interview-preparation-guide/) | Live collaborative coding/IDE, debugging and communication | Solve aloud + tests + refactoring |
+| [CoderPad (verify whether your employer's “CodePad” refers to this product)](https://coderpad.io/resources/docs/for-candidates/interview-preparation-guide/) | Live collaborative coding/IDE, debugging and communication | Solve aloud + tests + refactoring |
 | [Evalart](https://evalart.com/pruebas-programacion) | Practical coding, SQL, reasoning, theoretical technical and QA questions | Timed coding + SQL + explanation |
+
+Exercises with original prompts and a synthetic SQL fixture: [practice kit](../../practice/README.md). / Guía práctica y fixture SQL: [kit](../../practice/README.md).
 
 ## Weekly rotation / Rotación semanal
 - **Day A (30–45 min):** Java DSA (arrays, hash maps, strings, stacks/queues, two pointers, sliding window, sorting/binary search, recursion/trees, complexity). / Algoritmos.

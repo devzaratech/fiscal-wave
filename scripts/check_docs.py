@@ -16,7 +16,9 @@ required = [
     "docs/planning/QUALITY.md", "docs/planning/INTERVIEWS.md",
     "docs/planning/FINOPS.md", "docs/planning/COMPLIANCE.md",
     "docs/planning/I18N.md", "docs/planning/EMPLOYABILITY.md",
-    "agents/README.md", "docs/architecture/system-map.puml",
+    "agents/README.md", "practice/README.md",
+    "docs/planning/TODO.md", "docs/planning/THREAT_MODEL.md",
+    "docs/architecture/system-map.puml",
     "docs/architecture/dte-lifecycle.puml", "docs/architecture/aws-lab.puml",
 ]
 errors = []

@@ -19,7 +19,5 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Check links, mandatory docs, and PlantUML markers
+      - name: Check mandatory docs, links and diagram markers
         run: python3 scripts/check_docs.py
-      - name: Check whitespace errors
-        run: git diff --check HEAD~1 HEAD || true
