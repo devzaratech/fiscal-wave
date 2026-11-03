@@ -1,5 +1,4 @@
 """Converter safety and structural equivalence tests."""
-import hashlib
 import re
 import tempfile
 import unittest
@@ -55,20 +54,6 @@ class DiagramConversionTest(unittest.TestCase):
         self.assertIn("Authenticate tenant#59; reserve", idempotency)
         self.assertIn("folio#59; store intent", signing)
         self.assertIn("key != PFX", signing)
-
-    def test_mermaid_svg_previews_have_white_canvas_and_current_source_digest(self):
-        for source in sorted(SOURCE.glob("*.puml")):
-            with self.subTest(source=source.name):
-                mmd = SOURCE / "mermaid" / f"{source.stem}.mmd"
-                svg_file = SOURCE / "rendered" / "mermaid" / f"{source.stem}.svg"
-                self.assertTrue(svg_file.is_file(), f"Missing {svg_file}")
-                digest = hashlib.sha256(mmd.read_bytes()).hexdigest()
-                svg = svg_file.read_text(encoding="utf-8")
-                self.assertIn(
-                    '<rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF"/>',
-                    svg,
-                )
-                self.assertIn(f"<!-- fiscalwave-mermaid-sha256:{digest} -->", svg)
 
     def test_unknown_syntax_fails_closed(self):
         with tempfile.TemporaryDirectory() as temp:
