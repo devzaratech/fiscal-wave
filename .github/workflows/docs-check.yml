@@ -23,7 +23,10 @@ jobs:
       - name: Check PlantUML syntax and render SVG
         run: |
           plantuml -version
-          plantuml -checkonly docs/architecture/*.puml
+          for diagram in docs/architecture/*.puml; do
+            echo "Checking: $diagram"
+            plantuml -checkonly "$diagram"
+          done
           mkdir -p "$RUNNER_TEMP/fiscalwave-diagrams"
           plantuml -tsvg -o "$RUNNER_TEMP/fiscalwave-diagrams" docs/architecture/*.puml
           test "$(find "$RUNNER_TEMP/fiscalwave-diagrams" -type f -name '*.svg' | wc -l)" -ge 6
