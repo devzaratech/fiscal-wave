@@ -19,6 +19,16 @@ jobs:
         run: python3 -m unittest discover -s scripts/tests -v
       - name: Verify canonical Mermaid sources and gallery
         run: python3 scripts/diagrams.py --check
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned Mermaid syntax validator
+        run: |
+          mkdir -p "$RUNNER_TEMP/mermaid-parser"
+          npm install --prefix "$RUNNER_TEMP/mermaid-parser" --no-save --no-audit --no-fund --ignore-scripts mermaid@11.17.2
+          cp scripts/check-mermaid.mjs "$RUNNER_TEMP/mermaid-parser/check-mermaid.mjs"
+      - name: Validate Mermaid syntax using the real parser
+        run: node "$RUNNER_TEMP/mermaid-parser/check-mermaid.mjs" "$GITHUB_WORKSPACE/docs/architecture/mermaid"
       - name: Install PlantUML and Graphviz
         run: |
           sudo apt-get update -qq
