@@ -22,7 +22,7 @@ def relative_path(path):
     if not isinstance(path, str) or not path or "\\" in path or path.startswith("/"):
         raise ValueError("invalid path / ruta inválida")
     parts = path.split("/")
-    if any(x in ("", ".", "..") for x in parts if x != parts[-1] or path[-1] != "/"):
+    if any(x in ("", ".", "..") for x in (parts[:-1] if path.endswith("/") else parts)):
         raise ValueError("invalid path traversal / ruta insegura")
     if path.endswith("/") and not path[:-1]:
         raise ValueError("empty directory / carpeta vacía")

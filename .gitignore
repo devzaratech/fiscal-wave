@@ -41,3 +41,8 @@ terraform.tfvars
 coverage/
 *.sqlite
 *.db
+
+# Local-only agent context / Contexto local no versionado
+CLAUDE.local.md
+.claude/settings.local.json
+.opencode/plans/

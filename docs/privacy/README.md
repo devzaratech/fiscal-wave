@@ -13,7 +13,7 @@
 **Official sources / Fuentes:**
 - [BCN Law 21.719 current official text](https://www.bcn.cl/leychile/navegar?i=1209272)
 - [BCN Law 19.628 current text](https://www.bcn.cl/leychile/navegar?idNorma=141599)
-- [Senate bill 18.623-07 status](https://tramitacion.senado.cl/appsenado/index.php?mo=tramitacion&ac=obtener_documento&iddocto=)
+- [Senate bill 18.623-07: latest Senate processed bills](https://tramitacion.senado.cl/appsenado/index.php?ac=ultimos_vistos&mo=tramitacion)
 - [Senate vote / Votación](https://tramitacion.senado.cl/appsenado/index.php?ac=ultimos_vistos&mo=tramitacion)
 
 Check enacted amendments and agency guidance before setting deadlines. / Revisar cambios legislativos y nuevas reglas antes de codificar plazos.

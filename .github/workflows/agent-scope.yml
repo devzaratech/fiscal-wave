@@ -1,0 +1,27 @@
+name: Agent scope and unit checks
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scope:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Unit tests for agent file scope
+        run: python3 -m unittest discover -s scripts/tests -v
+      - name: Check ownership against pull request changed paths
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if [ -n "$BASE_SHA" ] && [ -n "$HEAD_SHA" ]; then
+            git diff --name-only "$BASE_SHA" "$HEAD_SHA" > /tmp/fw-changed-paths.txt
+            python3 scripts/check_task_manifest.py --changed-files-file /tmp/fw-changed-paths.txt
+          else
+            echo 'Manual dispatch: no PR base/head; scope diff not evaluated'
+          fi

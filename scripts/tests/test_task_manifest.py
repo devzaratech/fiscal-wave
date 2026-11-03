@@ -33,6 +33,12 @@ class ContractTests(unittest.TestCase):
         t = task(); t["branch"] = "feat/FW-027-other"
         self.assertTrue(any("not linked" in e for e in m.validate_task(t, [])))
 
+    def test_duplicate_slashes_rejected(self):
+        self.assertTrue(any("unsafe" in e for e in m.validate_task(task(), ["services//wrong/Path.java"])))
+        bad = task()
+        bad["allowed_paths"] = ["services//wrong/"]
+        self.assertTrue(any("unsafe" in e for e in m.validate_task(bad, [])))
+
     def test_app_change_without_task_fails(self):
         self.assertTrue(m.check_paths(["apps/shell/src/App.tsx"], Path(".")))
 
