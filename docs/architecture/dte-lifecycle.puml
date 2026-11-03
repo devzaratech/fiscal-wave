@@ -1,4 +1,6 @@
 @startuml
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontColor #111111
 title FiscalWave - proposed DTE lifecycle / ciclo DTE propuesto
 skinparam shadowing false
 actor "Operator / Operador" as User
