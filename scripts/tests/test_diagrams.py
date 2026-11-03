@@ -41,6 +41,20 @@ class DiagramConversionTest(unittest.TestCase):
                     r'<svg\b[^>]*><rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF"/>',
                 )
 
+    def test_mermaid_light_theme_and_escaped_sequence_semicolons(self):
+        for source in sorted(SOURCE.glob("*.puml")):
+            with self.subTest(source=source.name):
+                output = convert(source)
+                self.assertIn('%%{init: {"theme":"base"', output)
+                self.assertIn('"background":"#FFFFFF"', output)
+                self.assertIn('"themeCSS":"svg { background-color: #FFFFFF', output)
+        # Two diagrams previously broke the real Mermaid parser on raw semicolons.
+        idempotency = convert(SOURCE / "idempotency-sequence.puml")
+        signing = convert(SOURCE / "sii-signing-and-pdf.puml")
+        self.assertIn("Authenticate tenant#59; reserve", idempotency)
+        self.assertIn("folio#59; store intent", signing)
+        self.assertIn("key != PFX", signing)
+
     def test_unknown_syntax_fails_closed(self):
         with tempfile.TemporaryDirectory() as temp:
             source = Path(temp) / "unknown.puml"
