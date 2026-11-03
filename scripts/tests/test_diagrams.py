@@ -23,6 +23,13 @@ class DiagramConversionTest(unittest.TestCase):
                 self.assertEqual(arrows, converted)
                 self.assertIn(f"from {source.name}", rendered)
 
+    def test_diagrams_have_accessible_light_svg_palette(self):
+        for source in sorted(SOURCE.glob("*.puml")):
+            with self.subTest(source=source.name):
+                text = source.read_text(encoding="utf-8")
+                self.assertIn("skinparam backgroundColor #FFFFFF", text)
+                self.assertIn("skinparam defaultFontColor #111111", text)
+
     def test_unknown_syntax_fails_closed(self):
         with tempfile.TemporaryDirectory() as temp:
             source = Path(temp) / "unknown.puml"
