@@ -6,4 +6,6 @@
 
 **Credential security / Seguridad de credenciales:** Review [SII lifecycle](../docs/planning/SII-DTE-LIFECYCLE.md); enforce per-tenant authorized PFX and CAF key isolation, encryption, password separation, expiry/revocation, rotation, backup, privacy and log masking. Managed vaults, ElastiCache and Mongo/DocumentDB incur costs and require approval. / Custodia y presupuestos independientes.
 
+**AI collaboration and privacy / Coordinación y privacidad:** Read [multi-agent rules](../docs/planning/MULTI_AGENT.md) and [Chile privacy](../docs/privacy/CHILE-21719.md) before any changes. Work only on one approved task contract and allowed paths, never on another agent's shared worktree. Require controller/processor, personal-data retention and incident considerations in affected tasks. Flag country boundaries via [ADR-0010](../docs/adr/0010-country-repository-strategy.md). / Un dueño por tarea y revisión jurídica cuando aplique.
+
 **Deliver / Entregar:** security/cost review, risk table, IAM policy rationale, planned resources, cost estimate with assumptions, rollback/cleanup, residual-cost checks. Avoid static cloud keys.

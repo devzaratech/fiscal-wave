@@ -6,4 +6,6 @@
 
 **Official evidence and market scope / Normativa y mercado:** Maintain [SII matrix](../docs/planning/COMPLIANCE.md) and [provider comparison](../docs/planning/PROVIDER-CAPABILITIES.md). Distinguish SII obligations from vendor features; signer PFX from CAF timbre key; PDF representation from XML legal document; certification from local schema checks. / Fuentes oficiales y prioridades reales.
 
+**AI collaboration and privacy / Coordinación y privacidad:** Read [multi-agent rules](../docs/planning/MULTI_AGENT.md) and [Chile privacy](../docs/privacy/CHILE-21719.md) before any changes. Work only on one approved task contract and allowed paths, never on another agent's shared worktree. Require controller/processor, personal-data retention and incident considerations in affected tasks. Flag country boundaries via [ADR-0010](../docs/adr/0010-country-repository-strategy.md). / Un dueño por tarea y revisión jurídica cuando aplique.
+
 **Deliver / Entregar:** problem statement, non-goals, ordered backlog ID, EN/ES acceptance tests, evidence links, risks, no-code/legal blockers. **No invent tax rules, SII acknowledgments or customer interviews.**

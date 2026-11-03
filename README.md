@@ -35,6 +35,9 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 | Regulatory readiness | [Compliance / Cumplimiento](docs/planning/COMPLIANCE.md) | [Compliance / Cumplimiento](docs/planning/COMPLIANCE.md) |
 | Localisation | [i18n / Localización](docs/planning/I18N.md) | [i18n / Localización](docs/planning/I18N.md) |
 | Agent instructions | [AGENTS.md](AGENTS.md) | [AGENTS.md](AGENTS.md) |
+| Multi-agent development | [Worktree & PR ownership](docs/planning/MULTI_AGENT.md) | [Coordinación multiagente](docs/planning/MULTI_AGENT.md) |
+| Chile Law 21.719 | [Privacy readiness](docs/privacy/README.md) | [Programa de privacidad](docs/privacy/README.md) |
+| Country repo architecture | [ADR-0010](docs/adr/0010-country-repository-strategy.md) | [ADR-0010](docs/adr/0010-country-repository-strategy.md) |
 | CI/CD design | [Delivery pipeline](docs/planning/CICD.md) | [Entrega continua](docs/planning/CICD.md) |
 | Redis and MongoDB | [Data platforms](docs/planning/DATA-PLATFORMS.md) | [Plataformas de datos](docs/planning/DATA-PLATFORMS.md) |
 | PFX/CAF, XSD, XMLDSig and PDF417 | [SII DTE lifecycle](docs/planning/SII-DTE-LIFECYCLE.md) | [Ciclo DTE SII](docs/planning/SII-DTE-LIFECYCLE.md) |
@@ -45,6 +48,7 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 - [DTE lifecycle](docs/architecture/dte-lifecycle.puml)
 - [Idempotent issuance sequence](docs/architecture/idempotency-sequence.puml)
 - [AWS lab deployment](docs/architecture/aws-lab.puml)
+- [Personal-data boundaries / privacy map](docs/architecture/privacy-boundaries.puml)
 - [SII signing and PDF rendering](docs/architecture/sii-signing-and-pdf.puml)
 
 Render with a locally installed PlantUML: `plantuml -tsvg docs/architecture/*.puml`. Diagrams are **target designs**, not deployed systems.

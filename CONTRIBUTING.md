@@ -13,4 +13,7 @@
 - [ ] Architecture/API/event contracts updated / Contratos y diagramas
 - [ ] SII evidence linked if fiscal behavior changed / Evidencia SII si aplica
 
+## Multi-agent contribution / Colaboración entre agentes
+One FW issue → one owner and worktree → a task manifest in `coordination/tasks/FW-XXX.json` → PR. Human owner checks overlapping open PRs and approves every shared-contract change before merge; never overwrite other agents' changes. Application changes are checked by `scripts/check_task_manifest.py`. External/real taxpayer data, secrets, PFX, CAF or privileged deployment actions are prohibited without explicit authorization. See [coordination](docs/planning/MULTI_AGENT.md) and [Chile privacy](docs/privacy/CHILE-21719.md). / Coordinación y revisión obligatorias.
+
 Branch convention: `feat/FW-xxx-summary`, `docs/FW-xxx-summary`, `fix/FW-xxx-summary`.

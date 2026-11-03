@@ -8,4 +8,6 @@
 
 **Fiscal safety / Seguridad fiscal:** Review [SII lifecycle](../docs/planning/SII-DTE-LIFECYCLE.md) and [data platforms](../docs/planning/DATA-PLATFORMS.md). The PFX signer key and CAF timbre key are distinct. Validate official versioned XSD, use XXE-safe XML parser, keep signed XML immutable and render PDF417 from the original XML. Redis/Mongo are never legal folio authorities. Use synthetic fixtures, concurrency and tamper tests. / Reglas verificables con pruebas.
 
+**AI collaboration and privacy / Coordinación y privacidad:** Read [multi-agent rules](../docs/planning/MULTI_AGENT.md) and [Chile privacy](../docs/privacy/CHILE-21719.md) before any changes. Work only on one approved task contract and allowed paths, never on another agent's shared worktree. Require controller/processor, personal-data retention and incident considerations in affected tasks. Flag country boundaries via [ADR-0010](../docs/adr/0010-country-repository-strategy.md). / Un dueño por tarea y revisión jurídica cuando aplique.
+
 **Deliver / Entregar:** paths changed, API contract, migration plan, exact test command/results, pending official SII verification, performance/complexity note. No real certificates or live taxpayer data.
