@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   refresh:
-    if: github.ref != 'refs/heads/main' && github.actor == 'devzaratech'
+    if: github.ref == 'refs/heads/docs/diagram-publishing'
     runs-on: ubuntu-24.04
     permissions:
       contents: write
