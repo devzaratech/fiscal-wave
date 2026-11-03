@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Rebuild tracked SVG and Mermaid views; never writes to Git or network.
+# Rebuild tracked PlantUML SVG views and diagram gallery; never writes to Git or network.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
