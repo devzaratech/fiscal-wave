@@ -1,5 +1,12 @@
 name: Regenerate diagram assets on feature branches
 on:
+  push:
+    branches-ignore: [main]
+    paths:
+      - 'docs/architecture/*.puml'
+      - 'scripts/diagrams.py'
+      - 'scripts/render-diagrams.sh'
+      - '.github/workflows/diagram-assets.yml'
   workflow_dispatch:
 
 permissions:
@@ -33,7 +40,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq plantuml graphviz
-      - name: Regenerate SVG and supported Mermaid diagrams
+      - name: Regenerate PlantUML SVG and gallery
         run: bash scripts/render-diagrams.sh
       - name: Commit generated assets to this branch only
         shell: bash
@@ -45,12 +52,12 @@ jobs:
             echo 'Refusing to write main or an unknown branch' >&2
             exit 1
           fi
-          git add -A docs/architecture/mermaid docs/architecture/diagrams.md docs/architecture/rendered
+          git add -A docs/architecture/diagrams.md docs/architecture/rendered
           if git diff --cached --quiet; then
             echo 'Generated diagram assets already up-to-date'
             exit 0
           fi
           git -c user.name='github-actions[bot]' \
               -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-              commit -m 'docs(FW-033): regenerate derived Mermaid and SVG architecture views'
+              commit -m 'docs(FW-033): regenerate PlantUML SVG architecture views'
           git push origin "HEAD:refs/heads/$TARGET_BRANCH"
