@@ -46,15 +46,13 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 | PFX/CAF, XSD, XMLDSig and PDF417 | [SII DTE lifecycle](docs/planning/SII-DTE-LIFECYCLE.md) | [Ciclo DTE SII](docs/planning/SII-DTE-LIFECYCLE.md) |
 | Provider features | [LibreDTE and providers](docs/planning/PROVIDER-CAPABILITIES.md) | [LibreDTE y proveedores](docs/planning/PROVIDER-CAPABILITIES.md) |
 
-## Architecture maps (PlantUML)
-- [System map](docs/architecture/system-map.puml)
-- [DTE lifecycle](docs/architecture/dte-lifecycle.puml)
-- [Idempotent issuance sequence](docs/architecture/idempotency-sequence.puml)
-- [AWS lab deployment](docs/architecture/aws-lab.puml)
-- [Personal-data boundaries / privacy map](docs/architecture/privacy-boundaries.puml)
-- [SII signing and PDF rendering](docs/architecture/sii-signing-and-pdf.puml)
+## Architecture diagrams / Diagramas
 
-Render with a locally installed PlantUML: `plantuml -tsvg docs/architecture/*.puml`. Diagrams are **target designs**, not deployed systems.
+[Open the bilingual diagram gallery](docs/architecture/diagrams.md) for the six proposed architectures, including GitHub-visible SVG images, native Mermaid previews and canonical PlantUML sources.
+
+![FiscalWave proposed system map](docs/architecture/rendered/system-map.svg)
+
+Generate locally with `bash scripts/render-diagrams.sh` (requires PlantUML and Graphviz). GitHub Actions checks the generated files against the PlantUML sources. **These are proposed designs, not deployed systems.**
 
 ## Contributing and transparency
 See [CONTRIBUTING](CONTRIBUTING.md), [AGENTS](AGENTS.md) and the [Definition of Done](docs/planning/QUALITY.md). No secret, real taxpayer certificate/CAF, RUT dataset, customer invoice or AWS credential belongs in Git.
