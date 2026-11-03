@@ -10,8 +10,9 @@
 | M2 - Offline fiscal domain | Synthetic DTE 33/34 flows with deterministic tax rules, signing model and folio simulation | Concurrency and idempotency tests; XML/XSD fixtures verified against SII sources |
 | M3 - AWS competence lab | Cost-approved, temporary IAM/S3/Lambda/SQS and ECS/ALB routing demo | IaC plan, budget, logs, failover evidence, terraform destroy and cost review |
 | M4 - Official Chile integration | SII testing and certification workflow by properly authorized issuer | Official test artifacts/receipts, traceable evidence; never claim certification prematurely |
-| M5 - Customer-ready pilot | Security, tenant isolation, restore tests, audit, operations and support | External pilot with documented authorization and a runbook |
+| M5 - Customer-ready pilot + audit integrity | Security, tenant isolation, restore tests, SHA-256 event chain and tamper detection | Synthetic verification tests, authorized pilot and an operational runbook |
 | M6 - Expansion | Additional jurisdiction or billing/payments only after discovery | New ADR, research, jurisdiction-specific validation |
+| M7 - Optional cryptographic anchoring | Evaluate signed checkpoints, WORM, Merkle roots and blockchain adapter | Synthetic PoC, privacy and cost review; independent of DTE issuance |
 
 ## First delivery objective
 A user creates a synthetic draft from a bilingual UI, issues it to a mock gateway, sees a stable status, and can explain the audit trail. The next increment strengthens document correctness. Never spend months creating empty microservices before this flow exists.
