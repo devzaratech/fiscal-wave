@@ -30,9 +30,13 @@ FiscalWave aspira a ser una plataforma fiscal **API-first, bilingüe y portable 
 - [Redis/MongoDB](docs/planning/DATA-PLATFORMS.md) · [PFX/CAF, XSD y PDF417](docs/planning/SII-DTE-LIFECYCLE.md) · [Comparativa LibreDTE](docs/planning/PROVIDER-CAPABILITIES.md)
 - [Localización](docs/planning/I18N.md) · [Instrucciones para agentes](AGENTS.md)
 - [SOLID y estándares](docs/es/engineering-standards.md) · [Patrones de diseño](docs/architecture/pattern-catalog.md) · [Contrato de idempotencia](docs/architecture/idempotency-contract.md)
-- Diagramas PlantUML: [sistema](docs/architecture/system-map.puml), [ciclo DTE](docs/architecture/dte-lifecycle.puml), [emisión idempotente](docs/architecture/idempotency-sequence.puml), [laboratorio AWS](docs/architecture/aws-lab.puml), [firma SII y PDF](docs/architecture/sii-signing-and-pdf.puml), [flujo de datos personales](docs/architecture/privacy-boundaries.puml)[firma SII y PDF](docs/architecture/sii-signing-and-pdf.puml)
+## Diagramas de arquitectura
 
-Para generar SVG localmente, instalar PlantUML y ejecutar `plantuml -tsvg docs/architecture/*.puml`. Son **diseños propuestos**, no sistemas operativos.
+[Ver galería bilingüe](docs/architecture/diagrams.md) con los seis diagramas propuestos en SVG, vistas Mermaid nativas de GitHub y archivos PlantUML originales.
+
+![Mapa propuesto del sistema FiscalWave](docs/architecture/rendered/system-map.svg)
+
+Para regenerar los diagramas: `bash scripts/render-diagrams.sh` (requiere PlantUML y Graphviz). GitHub Actions comprueba la sincronización. **Son diseños propuestos, no servicios desplegados.**
 
 ## Colaboración y transparencia
 Revisar [CONTRIBUTING](CONTRIBUTING.md) y [Definition of Done](docs/planning/QUALITY.md). No subir certificados, CAF reales, datos de clientes, claves ni secretos. Licencia existente: [Apache-2.0](LICENSE).
