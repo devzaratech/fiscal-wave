@@ -10,8 +10,9 @@
 | M2 - Dominio fiscal offline | DTE sintéticos 33/34, reglas deterministas, firma y folios simulados | Pruebas de concurrencia e idempotencia; validación XML/XSD con fuentes SII |
 | M3 - Laboratorio AWS | IAM/S3/Lambda/SQS y demo ECS/ALB temporales con costo aprobado | IaC, presupuesto, logs, failover, `terraform destroy` y revisión de costo |
 | M4 - Integración oficial Chile | Pruebas SII y proceso formal con emisor habilitado | Evidencia oficial; no afirmar certificación prematuramente |
-| M5 - Piloto con cliente | Seguridad, aislamiento multiempresa, respaldo, auditoría y soporte | Piloto autorizado y procedimiento operativo |
+| M5 - Piloto y auditoría verificable | Seguridad, aislamiento multiempresa, respaldo, cadena SHA-256 y detección de alteraciones | Pruebas con datos sintéticos, piloto autorizado y procedimiento operativo |
 | M6 - Expansión | Otro país, facturación recurrente o pagos solo tras descubrir demanda | ADR, investigación y validación por jurisdicción |
+| M7 - Anclaje criptográfico opcional | Evaluar checkpoints firmados, WORM, raíces Merkle y adaptador blockchain | PoC sintética con revisión de privacidad y costos; independiente de la emisión DTE |
 
 ## Primera meta operativa
 Un usuario crea un borrador sintético desde UI bilingüe, lo emite contra un simulador, observa el estado y comprende la auditoría. En el siguiente incremento se robustece la corrección tributaria. Nunca posponer esto meses por microservicios vacíos.
