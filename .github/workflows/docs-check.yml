@@ -16,3 +16,15 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check mandatory docs, links and diagram markers
         run: python3 scripts/check_docs.py
+      - name: Install PlantUML for real diagram validation
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq plantuml
+      - name: Check PlantUML syntax and render SVG
+        run: |
+          plantuml -version
+          plantuml -checkonly docs/architecture/*.puml
+          mkdir -p "$RUNNER_TEMP/fiscalwave-diagrams"
+          plantuml -tsvg -o "$RUNNER_TEMP/fiscalwave-diagrams" docs/architecture/*.puml
+          test "$(find "$RUNNER_TEMP/fiscalwave-diagrams" -type f -name '*.svg' | wc -l)" -ge 6
+
