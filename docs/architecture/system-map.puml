@@ -1,0 +1,53 @@
+@startuml
+title FiscalWave - proposed system map / mapa propuesto
+left to right direction
+skinparam componentStyle rectangle
+skinparam shadowing false
+actor "Operator / Operador" as Operator
+cloud "OIDC Provider" as OIDC
+cloud "Chilean SII (external)" as SII
+rectangle "Frontend Shell (React + TS)" as Shell {
+  component "Invoices MFE" as Invoices
+  component "Partners MFE" as Partners
+  component "Operations MFE" as Operations
+  component "Admin MFE" as Admin
+}
+rectangle "Ingress / API BFF" as API
+package "FiscalWave services (target)" {
+  component "Tenant Service" as Tenant
+  component "Catalog Service" as Catalog
+  component "Fiscal Document Service\n(sole folio owner)" as Fiscal
+  component "Chile SII Connector" as Connector
+  component "Notifications" as Notify
+  component "Reporting" as Reporting
+}
+database "PostgreSQL\nper-service data ownership" as DB
+queue "Event bus / SQS (lab)" as Queue
+folder "Object storage / S3 (lab)" as Storage
+Operator --> Shell : HTTPS
+Shell --> OIDC : OIDC login
+Shell --> API : REST
+API --> Tenant
+API --> Catalog
+API --> Fiscal
+API --> Reporting
+Fiscal --> DB : transaction + outbox
+Tenant --> DB
+Catalog --> DB
+Reporting --> DB
+Fiscal --> Storage : signed artifacts
+Fiscal --> Queue : document prepared
+Queue --> Connector : delivery intent
+Connector --> SII : controlled test / authorized only
+Connector --> Queue : delivery result
+Queue --> Notify
+Queue --> Reporting
+note bottom of Fiscal
+CAF, folio, signing and fiscal state
+must remain under one owner
+end note
+note bottom of Connector
+Never issue folios. Unknown results
+require reconciliation before retry.
+end note
+@enduml
