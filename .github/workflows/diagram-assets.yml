@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   refresh:
-    if: github.ref != 'refs/heads/main'
+    if: github.ref != 'refs/heads/main' && github.actor == 'devzaratech'
     runs-on: ubuntu-24.04
     permissions:
       contents: write
