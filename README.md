@@ -26,6 +26,8 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 |---|---|---|
 | Product and scope | [Vision](docs/en/vision.md) | [Visión](docs/es/vision.md) |
 | Architecture | [Architecture](docs/en/architecture.md) | [Arquitectura](docs/es/architecture.md) |
+| SOLID, coding standards & patterns | [Engineering standards](docs/en/engineering-standards.md) | [Estándares de ingeniería](docs/es/engineering-standards.md) |
+| Idempotency & pattern catalog | [Idempotency](docs/architecture/idempotency-contract.md) · [Patterns](docs/architecture/pattern-catalog.md) | [Idempotencia](docs/architecture/idempotency-contract.md) · [Patrones](docs/architecture/pattern-catalog.md) |
 | Roadmap | [Roadmap](docs/en/roadmap.md) | [Hoja de ruta](docs/es/roadmap.md) |
 | Backlog, milestones & Scrum | [Planning / Planificación](docs/planning/README.md) | [Planning / Planificación](docs/planning/README.md) |
 | Interviews (original practice exercises) | [Technical practice / Práctica](docs/planning/INTERVIEWS.md) | [Technical practice / Práctica](docs/planning/INTERVIEWS.md) |
@@ -37,6 +39,7 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 ## Architecture maps (PlantUML)
 - [System map](docs/architecture/system-map.puml)
 - [DTE lifecycle](docs/architecture/dte-lifecycle.puml)
+- [Idempotent issuance sequence](docs/architecture/idempotency-sequence.puml)
 - [AWS lab deployment](docs/architecture/aws-lab.puml)
 
 Render with a locally installed PlantUML: `plantuml -tsvg docs/architecture/*.puml`. Diagrams are **target designs**, not deployed systems.

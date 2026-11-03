@@ -30,4 +30,4 @@
 8. No secrets or full personal/tax payloads in logs / Privacidad.
 
 ## Design consequences / Consecuencias
-HTTP idempotency, DB uniqueness and broker deduplication solve **different layers**; combine all three. Network exactly-once guarantees are not assumed. Code should expose typed results and documented error responses. See [lifecycle diagram](dte-lifecycle.puml) and [pattern catalog](pattern-catalog.md).
+HTTP idempotency, DB uniqueness and broker deduplication solve **different layers**; combine all three. Network exactly-once guarantees are not assumed. Code should expose typed results and documented error responses. See [lifecycle diagram](dte-lifecycle.puml), [idempotency sequence](idempotency-sequence.puml) and [pattern catalog](pattern-catalog.md).
