@@ -28,7 +28,7 @@ from pathlib import Path
 source, output = map(Path, sys.argv[1:])
 digest = hashlib.sha256(source.read_bytes()).hexdigest()
 svg = output.read_text(encoding="utf-8")
-root = re.search(r"<svg\\b[^>]*>", svg)
+root = re.search(r"<svg\b[^>]*>", svg)
 if not root:
     raise SystemExit(f"Missing SVG root in {output}")
 canvas = '<rect x="0" y="0" width="100%" height="100%" fill="#FFFFFF"/>'
