@@ -164,11 +164,9 @@ def gallery(diagrams: dict[str, str]) -> str:
         title = LABELS.get(stem, stem)
         parts += [
             f"## {title}", "",
-            f"[PlantUML source]({stem}.puml) · [Mermaid source](mermaid/{stem}.mmd) · "
-            f"[PlantUML SVG](rendered/{stem}.svg) · [Mermaid SVG](rendered/mermaid/{stem}.svg)", "",
+            f"[PlantUML source]({stem}.puml) · [Mermaid source](mermaid/{stem}.mmd) · [SVG](rendered/{stem}.svg)", "",
             f"![{title}](rendered/{stem}.svg)", "",
-            "<details>", "<summary>Mermaid — white SVG preview and editable source / vista clara y código</summary>", "",
-            f"![{title} — Mermaid](rendered/mermaid/{stem}.svg)", "",
+            "<details>", "<summary>Mermaid / Diagrama Mermaid</summary>", "",
             "```mermaid", mermaid.rstrip(), "```", "", "</details>", "",
         ]
     return "\n".join(parts).rstrip() + "\n"
