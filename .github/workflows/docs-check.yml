@@ -22,13 +22,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Install pinned Mermaid syntax validator
+      - name: Install pinned Mermaid renderer
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "1"
         run: |
-          mkdir -p "$RUNNER_TEMP/mermaid-parser"
-          npm install --prefix "$RUNNER_TEMP/mermaid-parser" --no-save --no-audit --no-fund --ignore-scripts mermaid@11.17.2
-          cp scripts/check-mermaid.mjs "$RUNNER_TEMP/mermaid-parser/check-mermaid.mjs"
-      - name: Validate Mermaid syntax using the real parser
-        run: node "$RUNNER_TEMP/mermaid-parser/check-mermaid.mjs" "$GITHUB_WORKSPACE/docs/architecture/mermaid"
+          mkdir -p "$RUNNER_TEMP/mermaid-cli"
+          npm install --prefix "$RUNNER_TEMP/mermaid-cli" --no-save --no-audit --no-fund --ignore-scripts @mermaid-js/mermaid-cli@11.17.0
+          CHROME="$(command -v google-chrome || command -v chromium)"
+          test -n "$CHROME"
+          printf '{"executablePath":"%s","args":["--no-sandbox"]}\n' "$CHROME" > "$RUNNER_TEMP/mermaid-puppeteer.json"
+      - name: Render every Mermaid diagram in Chromium
+        env:
+          MERMAID_CLI: ${{ runner.temp }}/mermaid-cli/node_modules/.bin/mmdc
+          MERMAID_PUPPETEER_CONFIG: ${{ runner.temp }}/mermaid-puppeteer.json
+        run: bash scripts/validate-mermaid.sh
       - name: Install PlantUML and Graphviz
         run: |
           sudo apt-get update -qq
