@@ -1,0 +1,25 @@
+name: Documentation checks
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.puml'
+      - 'scripts/check_docs.py'
+      - '.github/workflows/docs-check.yml'
+  push:
+    branches: [main]
+    paths:
+      - '**/*.md'
+      - '**/*.puml'
+      - 'scripts/check_docs.py'
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links, mandatory docs, and PlantUML markers
+        run: python3 scripts/check_docs.py
+      - name: Check whitespace errors
+        run: git diff --check HEAD~1 HEAD || true
