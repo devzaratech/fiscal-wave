@@ -22,6 +22,8 @@ required = [
     "docs/adr/0011-privacy-by-design.md",
     "coordination/README.md", "coordination/examples/FW-000.example.json",
     "scripts/check_task_manifest.py", "scripts/tests/test_task_manifest.py",
+    "scripts/check_pr_overlap.py", "scripts/tests/test_pr_overlap.py",
+    ".github/workflows/agent-scope.yml",
     ".claude/agents/fiscalwave-reviewer.md",
     ".opencode/agents/fiscalwave-reviewer.md",
     "docs/planning/DATA-PLATFORMS.md",
