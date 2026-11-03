@@ -13,48 +13,33 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Check documentation structure and local links
+      - name: Check mandatory docs and local links
         run: python3 scripts/check_docs.py
-      - name: Test strict PlantUML-to-Mermaid conversion
+      - name: Test PlantUML and SVG documentation checks
         run: python3 -m unittest discover -s scripts/tests -v
-      - name: Verify canonical Mermaid sources and gallery
+      - name: Verify generated SVG gallery
         run: python3 scripts/diagrams.py --check
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Install pinned Mermaid renderer
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: "1"
-        run: |
-          mkdir -p "$RUNNER_TEMP/mermaid-cli"
-          npm install --prefix "$RUNNER_TEMP/mermaid-cli" --no-save --no-audit --no-fund --ignore-scripts @mermaid-js/mermaid-cli@11.17.0
-          CHROME="$(command -v google-chrome || command -v chromium)"
-          test -n "$CHROME"
-          printf '{"executablePath":"%s","args":["--no-sandbox"]}\n' "$CHROME" > "$RUNNER_TEMP/mermaid-puppeteer.json"
-      - name: Render every Mermaid diagram in Chromium
-        env:
-          MERMAID_CLI: ${{ runner.temp }}/mermaid-cli/node_modules/.bin/mmdc
-          MERMAID_PUPPETEER_CONFIG: ${{ runner.temp }}/mermaid-puppeteer.json
-        run: bash scripts/validate-mermaid.sh
       - name: Install PlantUML and Graphviz
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq plantuml graphviz
-      - name: Check PlantUML syntax and regenerate SVG
+      - name: Validate and regenerate PlantUML SVGs
         run: bash scripts/render-diagrams.sh
-      - name: Reject stale or missing generated diagrams
+      - name: Reject missing, extra or stale diagram assets
         shell: bash
         run: |
           set -euo pipefail
           shopt -s nullglob
           sources=(docs/architecture/*.puml)
           svgs=(docs/architecture/rendered/*.svg)
-          mmds=(docs/architecture/mermaid/*.mmd)
           test "${#sources[@]}" -eq "${#svgs[@]}"
-          test "${#sources[@]}" -eq "${#mmds[@]}"
-          git diff --exit-code -- docs/architecture/rendered docs/architecture/mermaid docs/architecture/diagrams.md
-          unexpected="$(git ls-files --others --exclude-standard docs/architecture/rendered docs/architecture/mermaid docs/architecture/diagrams.md)"
-          test -z "$unexpected" || { printf 'Untracked generated diagram(s):\n%s\n' "$unexpected"; exit 1; }
+          if find docs/architecture -name '*.mmd' -type f | grep -q .; then
+            echo 'Unexpected Mermaid source: PlantUML is canonical' >&2
+            exit 1
+          fi
+          git diff --exit-code -- docs/architecture/rendered docs/architecture/diagrams.md
+          unexpected="$(git ls-files --others --exclude-standard docs/architecture/rendered docs/architecture/diagrams.md)"
+          test -z "$unexpected" || { printf 'Untracked generated asset(s):\n%s\n' "$unexpected"; exit 1; }
       - uses: actions/upload-artifact@v4
         with:
           name: fiscalwave-architecture-svg
