@@ -10,7 +10,7 @@ participant "Signer credential port\nPKCS#12 (.pfx/.p12)" as PFX
 participant "CAF credential port\nRSASK private timbre key" as CAF
 participant "Official XSD validator\nversioned offline bundle" as XSD
 participant "PDF renderer\nPDF417" as PDF
-folder "Private object storage\nimmutable signed XML + PDF" as Store
+database "Private object storage\nimmutable signed XML + PDF" as Store
 participant "SII Connector" as SII
 User -> MFE : Issue synthetic DTE / Emitir DTE de prueba
 MFE -> Fiscal : issue(idempotency key, issuer)
