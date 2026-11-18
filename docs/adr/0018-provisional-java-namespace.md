@@ -7,11 +7,17 @@ FiscalWave is being developed before AxiomSur Technologies owns a verified corpo
 
 Renaming Java packages is generally manageable early, but can become a breaking binary/API change after SDK publication or when class names leak into persisted data, security policies or wire contracts. Maven `groupId` is not the same thing as a Java `package`, nor is a GitHub repository URL. / Separar esas tres identidades evita migraciones innecesarias y cambios incompatibles.
 
+## Current namespace verification / Verificación actual del namespace
+**Evidence / Evidencia (2026-11-18):** The project owner provided a screenshot of Sonatype Central Portal → Publishing → Namespaces displaying **`io.github.axiomsur` — `Verified`**, with **Org: Axiomsur**. The same screenshot shows the separate personal namespace `io.github.devzaratech` as `Verified`. This is **owner-supplied UI evidence**, not an independent API audit of current publishing permissions. / Captura del portal aportada por el propietario: `io.github.axiomsur` ya figura como **verificado** en Sonatype, aunque sigue siendo **provisional** por decisión de arquitectura.
+
+**Meaning / Alcance:** Verification removes the previously open namespace-verification prerequisite for this displayed Central Portal organization/account. It does **not** prove a Java artifact has been published, guarantee future account access, establish legal trademark ownership, confirm a purchased domain, or waive Maven Central's release requirements. Before the first release, re-check effective namespace access and publishing credentials in Central Portal. / Verificación no equivale a publicación, titularidad marcaria ni garantía de acceso futuro.
+
+
 ## Decision / Decisión
 
 1. **Provisional identity / Identidad provisional.** Use `io.github.axiomsur.fiscalwave` as the root for FiscalWave-owned Java code, with descriptive lower-case domain/module subpackages; avoid the personal account name. Use `io.github.axiomsur` as the **provisional Maven groupId** for project-owned modules unless a later artifact-specific decision justifies otherwise. Example: `io.github.axiomsur.fiscalwave.fiscaldocument.domain`. The organization slug is not the legal business name. / Paquetes por dominio, no por titular personal.
 
-2. **Not a forever commitment / No es definitivo.** A future, controlled corporate domain may justify `com.axiomsur.fiscalwave` or `cl.axiomsur.fiscalwave` **only after its registration/control and namespace verification as applicable**. This ADR neither approves purchasing a domain nor mandates a later rename. Domain registration, code packages, GitHub organization and Maven Central namespace verification are distinct processes; a GitHub Organization does **not** automatically grant publishing rights for `io.github.axiomsur` on Maven Central. / No suponer verificación ni cambio automático.
+2. **Verified but still provisional / Verificado pero provisional.** `io.github.axiomsur` is shown as **Verified** in the owner-supplied Sonatype screenshot dated 2026-11-18; nevertheless, the team deliberately treats it as **provisional**, not a permanent corporate identity. A future, controlled corporate domain may justify `com.axiomsur.fiscalwave` or `cl.axiomsur.fiscalwave` **only after domain registration/control and applicable Sonatype namespace verification**. This ADR neither approves purchasing a domain nor mandates a rename. A GitHub Organization does **not automatically** receive Maven Central publishing rights; verification has been completed separately in the currently displayed Central Portal account. / Verificación comprobada visualmente; independencia técnica y migración opcional.
 
 3. **Keep names internal / No filtrar FQCN.** Never make Java fully qualified class/package names, Maven coordinates, or GitHub owner strings authoritative identifiers for fiscal documents, folios, tenants, business records, security principals, HTTP paths, OpenAPI/AsyncAPI schemas, events, queues/topics, webhooks, public error codes, audit event types or idempotency keys. Use stable, versioned business identifiers and contract schemas. Framework diagnostics/stack traces may naturally contain class names but cannot be treated as public contracts. / La identidad técnica no debe formar parte de contratos ni claves de negocio.
 
@@ -21,7 +27,7 @@ Renaming Java packages is generally manageable early, but can become a breaking 
 
 6. **External compliance independence / Independencia normativa.** Package refactoring must not rewrite signed Chile SII XML, change XML namespaces/XSD versions, re-sign existing DTE or change legally meaningful persisted artifacts. DTE wire formats and signatures remain governed by official SII requirements, not by the Java namespace. / Los XML firmados se mantienen inmutables.
 
-7. **Publishing and compatibility / Publicación y compatibilidad.** Before publishing a reusable Java library/SDK, verify the Maven Central namespace separately. Once artifacts are consumed externally, package migration can break Java imports, reflection and binary compatibility; a `groupId` change affects dependency resolution separately. Assess a **major version**, migration guide, temporary compatibility adapters where feasible, and Maven relocation POMs for changed coordinates. Never promise a transparent rename, and never rewrite published artifacts in place. / Versionar y comunicar cualquier cambio incompatible.
+7. **Publishing and compatibility / Publicación y compatibilidad.** The requested `io.github.axiomsur` namespace is **verified according to the 2026-11-18 owner screenshot**, but no artifact publication is evidenced. Before the first publication, verify actual Central Portal role/access, token/signing/build requirements and chosen coordinates. Once artifacts are consumed externally, package migration can break Java imports, reflection and binary compatibility; a `groupId` change affects dependency resolution separately. Assess a **major version**, migration guide, temporary compatibility adapters where feasible, and Maven relocation POMs for changed coordinates. Never promise a transparent rename, and never rewrite published artifacts in place. / Verificación del namespace no sustituye los controles de publicación; versionar y comunicar incompatibilidades.
 
 8. **Independent repository relocation / Repositorio independiente.** Transferring `devzaratech/fiscal-wave` to `axiomsur/fiscal-wave` (if/when approved) is **not** a technical trigger to rename packages or Maven coordinates. Git remotes, issue/CI references, permissions and secrets need their own transfer checklist. / Mover el repositorio no obliga a migrar Java.
 
@@ -37,7 +43,7 @@ Renaming Java packages is generally manageable early, but can become a breaking 
 package io.github.axiomsur.fiscalwave.fiscaldocument.domain;
 ```
 
-These are naming conventions for future implementation, **not a statement that code or Maven Central publications already exist**. / Son referencias objetivo, no despliegues realizados.
+These are naming conventions for future implementation. **The namespace is shown as verified, but no code artifact or Maven Central publication is evidenced by that screenshot.** / Namespace verificado según captura; no se afirma que existan artefactos publicados.
 
 ## Migration trigger and runbook / Condición y procedimiento de migración
 **Trigger / Condición:** the organization controls and has verified (where necessary) a corporate domain/namespace, and a documented cost–benefit assessment justifies changing the existing identity. Prefer deciding before any public Java SDK release. A separate reviewed PR must approve the actual migration. / Solo migrar cuando exista un beneficio y una identidad demostrable.
@@ -55,6 +61,8 @@ These are naming conventions for future implementation, **not a statement that c
 - **Rename immediately on GitHub transfer / Renombrar por transferencia:** rejected; different concern.
 
 **Trade-off / Costo:** a clear temporary namespace now in exchange for a potentially breaking, but planned, migration later. The most effective mitigation is preventing namespace leakage into durable/public contracts. / Migración potencial futura, sin acoplamiento accidental.
+
+**Benefits of current verification / Beneficio de la verificación:** the team can retain the verified `io.github.axiomsur` Maven publication identity without paying for a corporate domain now. A later `com.axiomsur` namespace is a **business/architecture choice**, not a prerequisite for distributing Java libraries. / La compra de un `.com` no es condición para publicar bajo el namespace verificado.
 
 ## Acceptance and scope / Aceptación y alcance
 This ADR only proposes naming and migration guardrails. It does **not** change existing packages, Maven artifacts, SII integrations, billing resources, licenses, domain ownership or deployment. Verification of rules is **pending implementation**; document-only review is not a substitute for Java test execution. / Se registra la decisión; no se declara implementación realizada.
