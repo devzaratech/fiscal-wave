@@ -1,9 +1,9 @@
 # First executable increment — FW-002 / Primer incremento ejecutable
 
-**Status / Estado: READY TO ASSIGN after reviewed M0 merge; NOT IMPLEMENTED.** [FW-002 issue](https://github.com/devzaratech/fiscal-wave/issues/3). Read [stack baseline](STACK-BASELINE.md) and [AI selection](AI-AGENT-STRATEGY.md).
+**Status / Estado: M0 PR #1 merged; FW-002 READY TO ASSIGN but NOT IMPLEMENTED as of 2026-11-18.** [FW-002 issue](https://github.com/devzaratech/fiscal-wave/issues/3). Read [stack baseline](STACK-BASELINE.md) and [AI selection](AI-AGENT-STRATEGY.md).
 
 ## Non-negotiable prerequisites / Prerrequisitos
-- Human owner reviews and explicitly approves merging [foundation PR #1](https://github.com/devzaratech/fiscal-wave/pull/1). Its `main` base currently has only README/LICENSE; **never create a detached FW-002 PR from unmerged docs unless owner approves a dependency**.
+- [Foundation PR #1](https://github.com/devzaratech/fiscal-wave/pull/1) is already merged; the current public `main` includes approved documentation and PolyForm licensing via [PR #22](https://github.com/devzaratech/fiscal-wave/pull/22). Before implementation, re-fetch current `main` SHA, inspect open PRs and review proposed [ADR-0013](../adr/0013-agent-harness-and-human-oversight.md) through [ADR-0016](../adr/0016-multilingual-public-contracts-and-sii-native.md) if they have been approved. No source application code has been implemented yet.
 - Select one write agent (not multiple) and inspect current `main` SHA. Create `feat/FW-002-local-ci` worktree and `coordination/tasks/FW-002.json` from the example; list exact paths that the agent may touch. Shared `.github/` edits are reviewed by owner.
 - Verify tool availability JDK21/Node24/Docker and compatible Spring Boot patch; choose with version-aware docs. Zero real taxpayers/CAF/PFX and no external SII calls or cloud expenses.
 
