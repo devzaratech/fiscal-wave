@@ -57,5 +57,11 @@ Generate locally with `bash scripts/render-diagrams.sh` (requires PlantUML and G
 ## Contributing and transparency
 See [CONTRIBUTING](CONTRIBUTING.md), [AGENTS](AGENTS.md) and the [Definition of Done](docs/planning/QUALITY.md). No secret, real taxpayer certificate/CAF, RUT dataset, customer invoice or AWS credential belongs in Git.
 
-## License
-Apache-2.0 as found in [LICENSE](LICENSE); future commercial modules require an explicit licensing decision and legal review.
+## Licensing / Licencia
+**Community: source-available under the [PolyForm Noncommercial License 1.0.0](LICENSE)** for applicable post-transition publications, with the standardized noncommercial and institutional permissions in the official text. This is **not OSI-approved Open Source**. The Community edition is intended to contain a complete fiscal core, not artificially disabled tax features.
+
+**Commercial:** use outside the public license's grants requires a separate written agreement with the rights holder. No commercial license, price, production readiness, SII certification or SLA is granted by this README. **Enterprise:** optional proprietary private modules and services are planned, not released.
+
+**Historical Apache-2.0 grants are preserved.** Before the FW-034 transition, the repository was published under Apache-2.0; permissions validly granted for those versions remain in effect, including commercial uses allowed by Apache-2.0. [See the original historical LICENSE](https://github.com/devzaratech/fiscal-wave/blob/95315c0204394e00ad3852ac04daa2667d4d0dc7/LICENSE).
+
+Details, EN/ES: [Licensing policy / Política de licenciamiento](docs/legal/LICENSING.md) · [ADR-0012](docs/adr/0012-license-transition-and-commercial-model.md) · [FW-034](https://github.com/devzaratech/fiscal-wave/issues/21). Import of legacy/third-party code and external contributions requires separate rights review.

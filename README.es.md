@@ -39,4 +39,13 @@ FiscalWave aspira a ser una plataforma fiscal **API-first, bilingüe y portable 
 Para regenerar los diagramas: `bash scripts/render-diagrams.sh` (requiere PlantUML y Graphviz). Los SVG exportados tienen fondo blanco opaco y texto oscuro, por lo que se ven correctamente tanto en el modo claro como en el oscuro de GitHub. GitHub Actions comprueba la sincronización. **Son diseños propuestos, no servicios desplegados.**
 
 ## Colaboración y transparencia
-Revisar [CONTRIBUTING](CONTRIBUTING.md) y [Definition of Done](docs/planning/QUALITY.md). No subir certificados, CAF reales, datos de clientes, claves ni secretos. Licencia existente: [Apache-2.0](LICENSE).
+Revisar [CONTRIBUTING](CONTRIBUTING.md) y [Definition of Done](docs/planning/QUALITY.md). No subir certificados, CAF reales, datos de clientes, claves ni secretos. Licenciamiento Community: [PolyForm Noncommercial 1.0.0](LICENSE) para versiones posteriores a FW-034; [licencias Apache 2.0 históricas](docs/legal/LICENSING.md) siguen vigentes para las versiones antiguas.
+
+## Licenciamiento / Licensing
+**Community: código source-available bajo [PolyForm Noncommercial License 1.0.0](LICENSE)** para publicaciones aplicables posteriores a la transición, con los usos no comerciales y las excepciones institucionales previstas en el texto oficial. **No es Open Source según la OSI.** Community tendrá un núcleo tributario completo, sin desactivaciones artificiales.
+
+**Commercial:** los usos fuera de las autorizaciones públicas requerirán un contrato escrito independiente con el titular de derechos. Este README no constituye una licencia comercial, tarifa, certificación SII, garantía de producción ni SLA. **Enterprise:** módulos propietarios privados y servicios avanzados futuros; aún no publicados.
+
+**Las autorizaciones anteriores bajo Apache-2.0 se conservan.** Las versiones publicadas antes de FW-034 siguen contando con los permisos concedidos válidamente, incluidos los usos comerciales permitidos por Apache-2.0. [LICENSE histórico anterior al cambio](https://github.com/devzaratech/fiscal-wave/blob/95315c0204394e00ad3852ac04daa2667d4d0dc7/LICENSE).
+
+Detalles bilingües: [Política de licenciamiento](docs/legal/LICENSING.md) · [ADR-0012](docs/adr/0012-license-transition-and-commercial-model.md) · [FW-034](https://github.com/devzaratech/fiscal-wave/issues/21). Todo código de terceros, ROOSTER/NicDTE y contribución externa requiere revisión de derechos.
