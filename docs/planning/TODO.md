@@ -12,8 +12,9 @@ Tasks begin **unchecked** and are checked only with linked evidence. Completed M
 - [ ] Approve [M1 stack](STACK-BASELINE.md) and pin actual versions when Maven and npm manifests are created / Versiones reales.
 - [ ] Execute [FW-002 first small PR](M1-KICKOFF.md) only after an approved foundation base; Java 21 tenant health/test/CI; no AWS/SII/real PII / Empezar con código funcional.
 
-## Before public release / Antes de publicar o abrir el proyecto
-- [ ] Confirm brand, initial MVP boundaries and future Apache-2.0/open-core strategy; **the existing Apache-2.0 LICENSE has not changed** / Confirmar marca, alcance y futura licencia comercial.
+## Before functional public release / Antes de la publicación funcional
+- [ ] **FW-034:** review and explicitly approve [licensing transition issue](https://github.com/devzaratech/fiscal-wave/issues/21) and its PR. The repository is already **public** and historical code was published under Apache-2.0; the new license cannot revoke previously granted permissions. Current target for future owner-controlled material is PolyForm Noncommercial 1.0.0, plus separately negotiated commercial rights. Confirm the legal licensor, external contributor rights and formal commercial contracts **before selling**. / Revisar cambio de licencia, conservar derechos históricos y confirmar titularidad.
+- [ ] Confirm brand and initial MVP boundaries; before commercial launch, review intellectual-property provenance and any paid-license terms with competent counsel. / Confirmar marca y alcance, revisar contratos comerciales.
 - [ ] Enable GitHub branch protection for this private repo if/when plan supports it. Until then require human PR review, CI and no direct main edits / Proteger main cuando sea posible (no protegida hoy).
 
 - [ ] Main branch protection when GitHub private-repository plan supports it; never claim it is enforced while disabled / Proteger main cuando sea posible.
