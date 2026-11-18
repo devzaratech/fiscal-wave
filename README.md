@@ -41,6 +41,8 @@ FiscalWave is an **API-first, bilingual, cloud-portable fiscal technology platfo
 | Multi-agent development | [Worktree & PR ownership](docs/planning/MULTI_AGENT.md) | [Coordinación multiagente](docs/planning/MULTI_AGENT.md) |
 | Chile Law 21.719 | [Privacy readiness](docs/privacy/README.md) | [Programa de privacidad](docs/privacy/README.md) |
 | Country repo architecture | [ADR-0010](docs/adr/0010-country-repository-strategy.md) | [ADR-0010](docs/adr/0010-country-repository-strategy.md) |
+| AI harness, ROOSTER, skills and multilingual public contracts | [Proposed ADRs 0013–0016](docs/planning/README.md) | [ADRs propuestos 0013–0016](docs/planning/README.md) |
+| GraphQL optional future adapter | [ADR-0017 Deferred](docs/adr/0017-graphql-deferred-adapter.md) | [ADR-0017 Diferido](docs/adr/0017-graphql-deferred-adapter.md) |
 | CI/CD design | [Delivery pipeline](docs/planning/CICD.md) | [Entrega continua](docs/planning/CICD.md) |
 | Redis and MongoDB | [Data platforms](docs/planning/DATA-PLATFORMS.md) | [Plataformas de datos](docs/planning/DATA-PLATFORMS.md) |
 | PFX/CAF, XSD, XMLDSig and PDF417 | [SII DTE lifecycle](docs/planning/SII-DTE-LIFECYCLE.md) | [Ciclo DTE SII](docs/planning/SII-DTE-LIFECYCLE.md) |

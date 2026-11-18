@@ -24,6 +24,11 @@
 | Agent coordination / Coordinación IA | [MULTI_AGENT.md](MULTI_AGENT.md) |
 | Chile Law 21.719 privacy / Datos personales | [Privacy program / Privacidad](../privacy/README.md) |
 | Country-repository decision / Decisión por país | [ADR-0010](../adr/0010-country-repository-strategy.md) |
+| Agent harness and HITL / Harness y supervisión | [ADR-0013 — Proposed](../adr/0013-agent-harness-and-human-oversight.md) |
+| ROOSTER reimplementation / Reimplementación ROOSTER | [ADR-0014 — Proposed](../adr/0014-rooster-reimplementation-and-provenance.md) |
+| Agent skills / Skills de agentes | [ADR-0015 — Proposed](../adr/0015-agent-skills-and-verification-contracts.md) |
+| Public API en/es-CL/sii-cl JSON/XML | [ADR-0016 — Proposed](../adr/0016-multilingual-public-contracts-and-sii-native.md) |
+| Optional GraphQL / GraphQL opcional | [ADR-0017 — Deferred](../adr/0017-graphql-deferred-adapter.md) |
 | Regulatory evidence / Cumplimiento | [COMPLIANCE.md](COMPLIANCE.md) |
 | Redis, MongoDB / Persistencia | [DATA-PLATFORMS.md](DATA-PLATFORMS.md) |
 | PFX, CAF, XSD, PDF417 / Flujo fiscal | [SII-DTE-LIFECYCLE.md](SII-DTE-LIFECYCLE.md) |

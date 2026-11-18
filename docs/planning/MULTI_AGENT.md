@@ -1,6 +1,6 @@
 # FW-029 — Multi-agent collaboration / Colaboración entre agentes
 
-**Status / Estado: policy and local checks implemented in this documentation branch; NOT a global GitHub lock.** [Issue FW-029](https://github.com/devzaratech/fiscal-wave/issues/14).
+**Status / Estado: policy and documentary CI checks exist on `main`; they are NOT a global GitHub lock.** [Issue FW-029](https://github.com/devzaratech/fiscal-wave/issues/14).
 
 ## Current execution model / Modo vigente
 **Sequential, NOT parallel writers / Secuencial, no escritores simultáneos.** [FW-032](AI-AGENT-STRATEGY.md) supersedes any suggestion in this document that more than one writer should work at once. Separate worktrees still protect history, enable migration and allow a read-only reviewer. Cross-PR checks remain defense in depth, not a reason to enable simultaneous writes. / Un agente escritor a la vez.
@@ -8,7 +8,7 @@
 ## Source of truth / Fuente única
 - `AGENTS.md` is canonical for **Codex, OpenCode and Claude Code**. `CLAUDE.md` imports it; OpenCode reads root `AGENTS.md`. Tool-specific reviewer profiles are **short wrappers**, not competing policies. / Las reglas no deben divergir.
 - Read the current `AGENTS.md`, relevant role in `agents/`, FW issue, acceptance criteria, ADR, privacy/SII requirements, and the latest base SHA before coding. / Validar SHA y alcance.
-- **Main is currently unprotected**, and GitHub reported branch rulesets unavailable for this private repository configuration as of 2026-11-03. No technical guarantee of blocked direct pushes: owner must enforce review and merges. / Restricción real, no garantía de bloqueo.
+- The repository is now **public**. A prior GitHub ruleset check applied to its former **private** configuration on 2026-11-03 and must not be interpreted as a current public-repository protection result. **Recheck live branch protection and rulesets before claiming enforcement**; until then owner enforces PR reviews and no direct main pushes procedurally. / Repositorio público; protección efectiva pendiente de verificación.
 
 ## Agent version and effective permission checks / Verificación de permisos reales
 The project OpenCode reviewer uses the **stable** `permission:` map (not the distinct OpenCode V2 `permissions:` list). Before using an updated/experimental OpenCode version, confirm the loaded agent configuration and the **effective** denial of edit, shell and subagents; documentation alone is not a sandbox. Claude reviewer tool allowlist must likewise be verified in the actual installed version. For any tool without a verified read-only profile, perform the review manually from GitHub. / Verificar la versión y permisos de cada agente.
@@ -51,6 +51,9 @@ Provide the following in the issue/PR and structured task contract:
 - `python3 -m unittest discover -s scripts/tests -v`
 - `python3 scripts/check_task_manifest.py --changed-files-file /tmp/changed.txt`
 - CI computes the PR changed paths, requires a task JSON for application changes, and checks declared ownership. It also compares changed filenames against other open PRs on the same base branch through a read-only GitHub API call. This catches many collisions but **does not create a global lock or protect direct pushes**. / Validación de alcance local, no mutex entre ramas.
+
+## Proposed harness ADRs / ADR de harness propuestos
+[ADR-0013](../adr/0013-agent-harness-and-human-oversight.md) and [ADR-0015](../adr/0015-agent-skills-and-verification-contracts.md) are proposed extensions, **not yet accepted or implemented enforcement**. They do not supersede root AGENTS.md until approved. / ADR propuestos sin activar agentes ni permisos.
 
 ## Quality and legal constraints / Calidad y normativa
 - Read [Definition of Done](QUALITY.md), [CI/CD](CICD.md), [Chile 21.719](../privacy/CHILE-21719.md) and [country isolation decision](../adr/0010-country-repository-strategy.md).
