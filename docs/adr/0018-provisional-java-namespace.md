@@ -1,6 +1,6 @@
 # ADR-0018 — Provisional Java/Maven Namespace and Migration Safety / Namespace Java/Maven provisional y migración segura
 
-**Status / Estado:** Proposed / Propuesto · 2026-11-18 · [FW-036](https://github.com/devzaratech/fiscal-wave/issues/25)
+**Status / Estado:** Accepted / Aceptado · 2026-11-18 (architecture decision only; implementation pending) · [FW-036](https://github.com/devzaratech/fiscal-wave/issues/25)
 
 ## Context / Contexto
 FiscalWave is being developed before AxiomSur Technologies owns a verified corporate internet domain. The GitHub organization `axiomsur` exists, but the project may still be hosted under a different repository owner while it is transferred. Purchasing a domain is not an MVP prerequisite. The owner explicitly declares `io.github.axiomsur` **provisional**, rather than a permanent corporate namespace. / FiscalWave comienza sin dominio corporativo propio; el namespace ligado a GitHub es **provisional** y no obliga a comprar un dominio.
@@ -65,6 +65,6 @@ These are naming conventions for future implementation. **The namespace is shown
 **Benefits of current verification / Beneficio de la verificación:** the team can retain the verified `io.github.axiomsur` Maven publication identity without paying for a corporate domain now. A later `com.axiomsur` namespace is a **business/architecture choice**, not a prerequisite for distributing Java libraries. / La compra de un `.com` no es condición para publicar bajo el namespace verificado.
 
 ## Acceptance and scope / Aceptación y alcance
-This ADR only proposes naming and migration guardrails. It does **not** change existing packages, Maven artifacts, SII integrations, billing resources, licenses, domain ownership or deployment. Verification of rules is **pending implementation**; document-only review is not a substitute for Java test execution. / Se registra la decisión; no se declara implementación realizada.
+This ADR records the approved provisional naming and migration guardrails. It does **not** change existing packages, Maven artifacts, SII integrations, billing resources, licenses, domain ownership or deployment. Verification of rules is **pending implementation**; document-only review is not a substitute for Java test execution. / Se registra la decisión; no se declara implementación realizada.
 
 **Related / Relacionados:** [ADR-0001](0001-repo-and-service-boundaries.md), [ADR-0006](0006-engineering-standards.md), [ADR-0010](0010-country-repository-strategy.md), [ADR-0016](0016-multilingual-public-contracts-and-sii-native.md), [AGENTS.md](../../AGENTS.md).
